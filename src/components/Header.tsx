@@ -1,11 +1,13 @@
-import { Menu, MessageCircle, Bell } from "lucide-react";
+import { Menu, MessageCircle, Bell, Coins } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Logo } from "./Logo";
 import { SITE } from "@/lib/site";
+import { useCoins } from "@/hooks/useCoins";
 
 const nav = ["Live Scores", "Fixtures", "Stats", "Standings", "News"];
 
 export const Header = () => {
+  const { coins, claimDaily } = useCoins();
   return (
     <header className="sticky top-0 z-40 border-b border-gold/40 bg-gold text-gold-foreground shadow-gold">
       <div className="container flex h-14 items-center justify-between gap-4">
@@ -20,6 +22,15 @@ export const Header = () => {
           </nav>
         </div>
         <div className="flex items-center gap-2">
+          <button
+            onClick={claimDaily}
+            title="Claim 500 free coins"
+            className="flex items-center gap-1.5 rounded-md bg-gold-foreground px-2.5 py-1.5 text-xs font-bold text-gold transition-transform hover:scale-105"
+          >
+            <Coins className="h-3.5 w-3.5" />
+            <span className="tabular-nums">{coins.toLocaleString("en-IN")}</span>
+            <span className="hidden sm:inline text-[10px] opacity-70">PC</span>
+          </button>
           <Button variant="ghost" size="icon" className="hidden sm:inline-flex hover:bg-black/10">
             <Bell className="h-4 w-4" />
           </Button>

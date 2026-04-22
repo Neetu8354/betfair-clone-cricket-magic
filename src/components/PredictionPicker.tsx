@@ -1,7 +1,9 @@
 import { useState } from "react";
-import { Delete, RefreshCw } from "lucide-react";
+import { Delete, RefreshCw, Coins, Check, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SITE } from "@/lib/site";
+import { useCoins } from "@/hooks/useCoins";
+import { toast } from "sonner";
 
 const matches = [
   {
@@ -36,7 +38,9 @@ const KEYS = ["1","2","3","4","5","6","7","8","9","0","00","."];
 export const PredictionPicker = () => {
   const m = matches[0];
   const [pick, setPick] = useState<{ row: number; tone: "back" | "lay" } | null>({ row: 1, tone: "back" });
-  const [confidence, setConfidence] = useState("25");
+  const [confidence, setConfidence] = useState("100");
+  const { coins, picks, placePick, resolveLast } = useCoins();
+  const lastOpen = picks.find((p) => p.status === "open");
 
   const tap = (k: string) => {
     if (k === "back") return setConfidence((c) => c.slice(0, -1) || "0");
@@ -45,6 +49,28 @@ export const PredictionPicker = () => {
   const bump = (n: number) => setConfidence((c) => String(Math.max(0, (parseInt(c || "0", 10) + n))));
 
   const selectedLabel = pick ? m.rows[pick.row].name : "—";
+  const stake = parseInt(confidence || "0", 10);
+  const odds = pick ? parseFloat(pick.tone === "back" ? m.rows[pick.row].back.o : m.rows[pick.row].lay.o) : 0;
+  const potential = Math.round(stake * odds);
+
+  const handlePlace = () => {
+    if (!pick) return toast.error("Pick a side first");
+    if (stake <= 0) return toast.error("Set a stake");
+    if (stake > coins) return toast.error("Not enough Pitch Coins");
+    const ok = placePick({
+      match: `${m.a} vs ${m.b}`,
+      selection: m.rows[pick.row].name,
+      side: pick.tone === "back" ? "for" : "against",
+      odds,
+      stake,
+    });
+    if (ok) toast.success(`Pick placed · ${stake} PC on ${m.rows[pick.row].name}`);
+  };
+
+  const handleResolve = (won: boolean) => {
+    resolveLast(won);
+    toast(won ? "🎉 Pick won! Coins credited." : "Better luck next match.");
+  };
 
   return (
     <section className="container py-10">
@@ -91,18 +117,20 @@ export const PredictionPicker = () => {
             {pick && <span className={`ml-1 font-bold ${pick.tone === "back" ? "text-back" : "text-lay"}`}>· {pick.tone === "back" ? "FOR" : "AGAINST"}</span>}
           </div>
 
-          {/* Confidence steppers */}
+          {/* Stake row */}
+          <div className="mb-2 flex items-center justify-between text-[11px] text-muted-foreground">
+            <span>Stake (Pitch Coins · virtual)</span>
+            <span>Potential: <span className="font-bold text-gold tabular-nums">{potential.toLocaleString("en-IN")} PC</span></span>
+          </div>
           <div className="grid grid-cols-2 gap-2">
             <div className="flex items-center justify-between rounded-lg bg-card px-2 py-1.5">
               <button onClick={() => bump(-1)} aria-label="decrease" className="flex h-8 w-8 items-center justify-center rounded-md bg-secondary text-lg font-bold text-foreground hover:bg-muted">−</button>
-              <span className="text-base font-extrabold text-foreground">{confidence}%</span>
+              <span className="text-base font-extrabold text-foreground tabular-nums">{confidence}</span>
               <button onClick={() => bump(1)} aria-label="increase" className="flex h-8 w-8 items-center justify-center rounded-md bg-secondary text-lg font-bold text-foreground hover:bg-muted">+</button>
             </div>
             <div className="flex items-center gap-2">
               <Button onClick={() => setConfidence("0")} variant="ghost" size="sm" className="flex-1"><RefreshCw className="h-3.5 w-3.5" /> Reset</Button>
-              <a href={SITE.whatsapp} target="_blank" rel="noopener noreferrer" className="flex-1">
-                <Button variant="hero" size="sm" className="w-full">Share Pick</Button>
-              </a>
+              <Button onClick={handlePlace} variant="hero" size="sm" className="flex-1"><Coins className="h-3.5 w-3.5" /> Place</Button>
             </div>
           </div>
 
@@ -122,8 +150,28 @@ export const PredictionPicker = () => {
               <Delete className="h-4 w-4" />
             </button>
           </div>
+
+          {lastOpen && (
+            <div className="mt-3 flex items-center justify-between rounded-lg border border-border bg-card px-3 py-2">
+              <div className="text-[11px]">
+                <div className="font-bold text-foreground">Open: {lastOpen.selection} <span className="text-muted-foreground">({lastOpen.side === "for" ? "FOR" : "AGAINST"})</span></div>
+                <div className="text-muted-foreground">Stake {lastOpen.stake} PC @ {lastOpen.odds}</div>
+              </div>
+              <div className="flex gap-1.5">
+                <button onClick={() => handleResolve(true)} className="flex items-center gap-1 rounded-md bg-back px-2 py-1 text-[11px] font-bold text-[hsl(220_15%_10%)] hover:brightness-110"><Check className="h-3 w-3" /> Won</button>
+                <button onClick={() => handleResolve(false)} className="flex items-center gap-1 rounded-md bg-lay px-2 py-1 text-[11px] font-bold text-[hsl(220_15%_10%)] hover:brightness-110"><X className="h-3 w-3" /> Lost</button>
+              </div>
+            </div>
+          )}
+
+          <p className="mt-3 text-center text-[10px] text-muted-foreground">
+            Pitch Coins are virtual & free. No real money, no withdrawals. Just for fun.
+          </p>
         </div>
       </div>
+      <a href={SITE.whatsapp} target="_blank" rel="noopener noreferrer" className="mt-3 block text-center text-xs text-muted-foreground hover:text-foreground">
+        Share your pick on WhatsApp →
+      </a>
     </section>
   );
 };
