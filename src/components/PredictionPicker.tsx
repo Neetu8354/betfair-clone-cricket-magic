@@ -20,14 +20,14 @@ const matches = [
 const Cell = ({ tone, o, v, onClick, active }: { tone: "back" | "lay"; o: string; v: string; onClick: () => void; active: boolean }) => (
   <button
     onClick={onClick}
-    className={`flex w-[64px] flex-col items-center justify-center rounded-md py-2 transition-all ${
+    className={`flex w-[68px] flex-col items-center justify-center rounded-sm py-1.5 transition-all ${
       tone === "back"
-        ? `bg-back/20 hover:bg-back/30 ${active ? "ring-2 ring-back" : ""}`
-        : `bg-lay/20 hover:bg-lay/30 ${active ? "ring-2 ring-lay" : ""}`
+        ? `bg-back hover:brightness-110 ${active ? "ring-2 ring-offset-2 ring-offset-card ring-back" : ""}`
+        : `bg-lay hover:brightness-110 ${active ? "ring-2 ring-offset-2 ring-offset-card ring-lay" : ""}`
     }`}
   >
-    <span className={`text-base font-extrabold leading-none ${tone === "back" ? "text-back" : "text-lay"}`}>{o}</span>
-    <span className="mt-0.5 text-[10px] text-muted-foreground">{v}</span>
+    <span className="text-lg font-black leading-none tracking-tight text-[hsl(220_15%_10%)]">{o}</span>
+    <span className="mt-0.5 text-[10px] font-medium text-[hsl(220_15%_10%)]/70">{v}</span>
   </button>
 );
 
