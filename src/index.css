@@ -8,35 +8,49 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 155 45% 6%;
+    --foreground: 45 80% 96%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 155 40% 9%;
+    --card-foreground: 45 80% 96%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 155 40% 9%;
+    --popover-foreground: 45 80% 96%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 152 70% 38%;
+    --primary-foreground: 155 45% 6%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 155 30% 14%;
+    --secondary-foreground: 45 80% 96%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 155 25% 14%;
+    --muted-foreground: 150 10% 65%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 42 90% 55%;
+    --accent-foreground: 155 45% 6%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 155 25% 18%;
+    --input: 155 25% 16%;
+    --ring: 42 90% 55%;
 
-    --radius: 0.5rem;
+    --gold: 42 90% 55%;
+    --gold-foreground: 155 45% 6%;
+    --emerald: 152 70% 38%;
+    --emerald-glow: 152 80% 50%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(152 70% 38%), hsl(152 80% 50%));
+    --gradient-gold: linear-gradient(135deg, hsl(42 90% 55%), hsl(38 95% 65%));
+    --gradient-hero: linear-gradient(180deg, hsl(155 45% 6% / 0.2) 0%, hsl(155 45% 6% / 0.85) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(155 40% 11%), hsl(155 40% 7%));
+
+    --shadow-glow: 0 10px 40px -10px hsl(152 80% 50% / 0.4);
+    --shadow-gold: 0 10px 30px -10px hsl(42 90% 55% / 0.5);
+    --shadow-card: 0 8px 24px -8px hsl(155 80% 4% / 0.6);
+
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
