@@ -2,17 +2,18 @@ import { useEffect } from "react";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { PromoSlider } from "@/components/PromoSlider";
-import { Categories } from "@/components/Categories";
 import { LiveMatches } from "@/components/LiveMatches";
-import { GamesSection } from "@/components/GamesSection";
+import { MatchPulse } from "@/components/MatchPulse";
+import { PlayerStats } from "@/components/PlayerStats";
 import { Features } from "@/components/Features";
 import { Leaderboard } from "@/components/Leaderboard";
 import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
+import { BottomNav } from "@/components/BottomNav";
 
 const Index = () => {
   useEffect(() => {
-    document.title = "RoyalKhel — Free-to-Play Cricket & Casino Games India";
+    document.title = "PitchPro — India's Premium Cricket Stats & Predictions Hub";
     const setMeta = (name: string, content: string, attr: "name" | "property" = "name") => {
       let el = document.querySelector(`meta[${attr}="${name}"]`) as HTMLMetaElement | null;
       if (!el) {
@@ -22,9 +23,9 @@ const Index = () => {
       }
       el.setAttribute("content", content);
     };
-    setMeta("description", "Play free cricket prediction, casino card games, dice & spin-the-wheel with virtual coins. India's #1 risk-free gaming arena. Join on WhatsApp.");
-    setMeta("og:title", "RoyalKhel — Free Cricket & Casino Games", "property");
-    setMeta("og:description", "Play free cricket & casino games with virtual coins. Zero real-money risk. India's most fun gaming arena.", "property");
+    setMeta("description", "PitchPro — India's premium cricket hub. Live scores, deep stats, fan predictions, top player rankings and a buzzing community.");
+    setMeta("og:title", "PitchPro — Cricket Stats & Predictions Hub", "property");
+    setMeta("og:description", "Live cricket scores, deep stats, fan predictions and community chat — all in one beautifully crafted dashboard.", "property");
     setMeta("og:type", "website", "property");
 
     let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
@@ -45,27 +46,28 @@ const Index = () => {
     ld.textContent = JSON.stringify({
       "@context": "https://schema.org",
       "@type": "WebSite",
-      name: "RoyalKhel",
-      description: "Free-to-play cricket & casino games arena for India.",
+      name: "PitchPro",
+      description: "India's premium cricket stats and predictions hub.",
       url: window.location.origin,
     });
   }, []);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div id="top" className="min-h-screen bg-background pb-16 lg:pb-0">
       <Header />
       <main>
-        <h1 className="sr-only">RoyalKhel — Free-to-Play Cricket and Casino Games for India</h1>
+        <h1 className="sr-only">PitchPro — India's Premium Cricket Stats and Predictions Hub</h1>
         <Hero />
         <PromoSlider />
-        <Categories />
-        <LiveMatches />
-        <GamesSection />
+        <div id="matches"><LiveMatches /></div>
+        <MatchPulse />
+        <div id="stats"><PlayerStats /></div>
         <Features />
-        <Leaderboard />
+        <div id="standings"><Leaderboard /></div>
       </main>
       <Footer />
       <WhatsAppButton />
+      <BottomNav />
     </div>
   );
 };

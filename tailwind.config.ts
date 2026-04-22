@@ -55,6 +55,8 @@ export default {
           DEFAULT: "hsl(var(--emerald))",
           glow: "hsl(var(--emerald-glow))",
         },
+        back: "hsl(var(--back))",
+        lay: "hsl(var(--lay))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

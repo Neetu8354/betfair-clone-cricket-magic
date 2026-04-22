@@ -2,9 +2,9 @@ import { Logo } from "./Logo";
 import { SITE } from "@/lib/site";
 
 const cols = {
-  Games: ["Cricket", "Casino", "Arcade", "Spin & Win"],
-  Company: ["About", "Promotions", "Leaderboard", "Blog"],
-  Support: ["Help Center", "WhatsApp", "Contact", "Responsible Play"],
+  Cricket: ["Live Scores", "Fixtures", "Match Pulse", "Standings"],
+  Stats: ["Top Batters", "Top Bowlers", "Team Form", "Records"],
+  Company: ["About", "News", "Community", "Contact"],
 };
 
 export const Footer = () => (
@@ -13,7 +13,7 @@ export const Footer = () => (
       <div className="grid gap-8 md:grid-cols-4">
         <div>
           <Logo />
-          <p className="mt-3 text-sm text-muted-foreground">{SITE.tagline}. Free-to-play with virtual coins only.</p>
+        <p className="mt-3 text-sm text-muted-foreground">{SITE.tagline}. Built for fans, by fans.</p>
         </div>
         {Object.entries(cols).map(([title, links]) => (
           <div key={title}>
@@ -29,7 +29,7 @@ export const Footer = () => (
         ))}
       </div>
       <div className="mt-10 border-t border-border pt-6 text-center text-xs text-muted-foreground">
-        © {new Date().getFullYear()} RoyalKhel. Free-to-play entertainment platform. No real-money gambling. 18+ recommended.
+        © {new Date().getFullYear()} PitchPro. Cricket stats, predictions & community. Not affiliated with any league or operator.
       </div>
     </div>
   </footer>

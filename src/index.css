@@ -8,47 +8,50 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 155 45% 6%;
-    --foreground: 45 80% 96%;
+    --background: 220 12% 8%;
+    --foreground: 45 30% 96%;
 
-    --card: 155 40% 9%;
-    --card-foreground: 45 80% 96%;
+    --card: 220 10% 12%;
+    --card-foreground: 45 30% 96%;
 
-    --popover: 155 40% 9%;
-    --popover-foreground: 45 80% 96%;
+    --popover: 220 10% 12%;
+    --popover-foreground: 45 30% 96%;
 
-    --primary: 152 70% 38%;
-    --primary-foreground: 155 45% 6%;
+    --primary: 45 95% 55%;
+    --primary-foreground: 220 15% 10%;
 
-    --secondary: 155 30% 14%;
-    --secondary-foreground: 45 80% 96%;
+    --secondary: 220 8% 18%;
+    --secondary-foreground: 45 30% 96%;
 
-    --muted: 155 25% 14%;
-    --muted-foreground: 150 10% 65%;
+    --muted: 220 8% 16%;
+    --muted-foreground: 220 8% 65%;
 
-    --accent: 42 90% 55%;
-    --accent-foreground: 155 45% 6%;
+    --accent: 200 90% 55%;
+    --accent-foreground: 220 15% 10%;
 
     --destructive: 0 75% 55%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 155 25% 18%;
-    --input: 155 25% 16%;
-    --ring: 42 90% 55%;
+    --border: 220 8% 20%;
+    --input: 220 8% 18%;
+    --ring: 45 95% 55%;
 
-    --gold: 42 90% 55%;
-    --gold-foreground: 155 45% 6%;
-    --emerald: 152 70% 38%;
-    --emerald-glow: 152 80% 50%;
+    --gold: 45 95% 55%;
+    --gold-foreground: 220 15% 10%;
+    --emerald: 200 90% 55%;
+    --emerald-glow: 200 90% 60%;
 
-    --gradient-primary: linear-gradient(135deg, hsl(152 70% 38%), hsl(152 80% 50%));
-    --gradient-gold: linear-gradient(135deg, hsl(42 90% 55%), hsl(38 95% 65%));
-    --gradient-hero: linear-gradient(180deg, hsl(155 45% 6% / 0.2) 0%, hsl(155 45% 6% / 0.85) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(155 40% 11%), hsl(155 40% 7%));
+    --back: 200 75% 60%;
+    --lay: 350 75% 70%;
 
-    --shadow-glow: 0 10px 40px -10px hsl(152 80% 50% / 0.4);
-    --shadow-gold: 0 10px 30px -10px hsl(42 90% 55% / 0.5);
-    --shadow-card: 0 8px 24px -8px hsl(155 80% 4% / 0.6);
+    --gradient-primary: linear-gradient(135deg, hsl(45 95% 55%), hsl(38 100% 60%));
+    --gradient-gold: linear-gradient(135deg, hsl(45 95% 55%), hsl(38 100% 60%));
+    --gradient-hero: linear-gradient(180deg, hsl(220 15% 8% / 0.2) 0%, hsl(220 15% 8% / 0.9) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(220 10% 14%), hsl(220 12% 9%));
+
+    --shadow-glow: 0 10px 40px -10px hsl(45 95% 55% / 0.35);
+    --shadow-gold: 0 8px 24px -10px hsl(45 95% 55% / 0.45);
+    --shadow-card: 0 8px 24px -8px hsl(220 30% 2% / 0.7);
 
     --radius: 0.75rem;
 
