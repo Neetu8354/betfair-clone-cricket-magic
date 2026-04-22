@@ -48,7 +48,7 @@ export const useCoins = () => {
       ...state,
       coins: state.coins - p.stake,
       picks: [
-        { ...p, id: crypto.randomUUID(), status: "open", ts: Date.now() },
+        { ...p, id: crypto.randomUUID(), status: "open" as const, ts: Date.now() },
         ...state.picks,
       ].slice(0, 50),
     };
