@@ -23,9 +23,9 @@ const matches = [
 ];
 
 const Cell = ({ label, value, tone }: { label: string; value: string; tone: "back" | "lay" }) => (
-  <a href={SITE.whatsapp} target="_blank" rel="noopener noreferrer" className={`flex flex-col items-center justify-center rounded-md px-3 py-2 transition-transform hover:scale-[1.02] ${tone === "back" ? "bg-back/20 hover:bg-back/30" : "bg-lay/20 hover:bg-lay/30"}`}>
-    <span className={`text-base font-extrabold ${tone === "back" ? "text-back" : "text-lay"}`}>{value}</span>
-    <span className="text-[10px] uppercase tracking-wider text-muted-foreground">{label}</span>
+  <a href={SITE.whatsapp} target="_blank" rel="noopener noreferrer" className={`flex w-[68px] flex-col items-center justify-center rounded-sm py-1.5 transition-all hover:brightness-110 ${tone === "back" ? "bg-back" : "bg-lay"}`}>
+    <span className="text-lg font-black leading-none tracking-tight text-[hsl(220_15%_10%)]">{value}</span>
+    <span className="mt-0.5 text-[10px] font-semibold uppercase tracking-wider text-[hsl(220_15%_10%)]/70">{label}</span>
   </a>
 );
 
