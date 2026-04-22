@@ -1,6 +1,6 @@
 export const SITE = {
-  name: "RoyalKhel",
-  tagline: "India's Free-to-Play Cricket & Casino Arena",
+  name: "PitchPro",
+  tagline: "India's Premium Cricket Stats & Predictions Hub",
   whatsapp: "https://wa.link/reddyanna_",
   currency: "₹",
 };
