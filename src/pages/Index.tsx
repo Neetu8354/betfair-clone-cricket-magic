@@ -4,6 +4,7 @@ import { Hero } from "@/components/Hero";
 import { PromoSlider } from "@/components/PromoSlider";
 import { LiveMatches } from "@/components/LiveMatches";
 import { MatchPulse } from "@/components/MatchPulse";
+import { PredictionPicker } from "@/components/PredictionPicker";
 import { PlayerStats } from "@/components/PlayerStats";
 import { Features } from "@/components/Features";
 import { Leaderboard } from "@/components/Leaderboard";
@@ -61,6 +62,7 @@ const Index = () => {
         <PromoSlider />
         <div id="matches"><LiveMatches /></div>
         <MatchPulse />
+        <PredictionPicker />
         <div id="stats"><PlayerStats /></div>
         <Features />
         <div id="standings"><Leaderboard /></div>
