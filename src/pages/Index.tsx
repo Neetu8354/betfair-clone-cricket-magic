@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { PromoSlider } from "@/components/PromoSlider";
@@ -10,50 +9,31 @@ import { Leaderboard } from "@/components/Leaderboard";
 import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { BottomNav } from "@/components/BottomNav";
+import { Seo, orgJsonLd, websiteJsonLd, breadcrumbJsonLd, SITE_URL } from "@/components/seo/Seo";
+import { POSTS } from "@/data/posts";
+import { Link } from "react-router-dom";
 
 const Index = () => {
-  useEffect(() => {
-    document.title = "Betfair — India's Premium Cricket Stats & Predictions Hub";
-    const setMeta = (name: string, content: string, attr: "name" | "property" = "name") => {
-      let el = document.querySelector(`meta[${attr}="${name}"]`) as HTMLMetaElement | null;
-      if (!el) {
-        el = document.createElement("meta");
-        el.setAttribute(attr, name);
-        document.head.appendChild(el);
-      }
-      el.setAttribute("content", content);
-    };
-    setMeta("description", "Betfair — India's premium cricket hub. Live scores, deep stats, fan predictions, top player rankings and a buzzing community.");
-    setMeta("og:title", "Betfair — Cricket Stats & Predictions Hub", "property");
-    setMeta("og:description", "Live cricket scores, deep stats, fan predictions and community chat — all in one beautifully crafted dashboard.", "property");
-    setMeta("og:type", "website", "property");
-
-    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
-    if (!canonical) {
-      canonical = document.createElement("link");
-      canonical.rel = "canonical";
-      document.head.appendChild(canonical);
-    }
-    canonical.href = window.location.origin + "/";
-
-    let ld = document.getElementById("ld-json");
-    if (!ld) {
-      ld = document.createElement("script");
-      ld.id = "ld-json";
-      (ld as HTMLScriptElement).type = "application/ld+json";
-      document.head.appendChild(ld);
-    }
-    ld.textContent = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      name: "Betfair",
-      description: "India's premium cricket stats and predictions hub.",
-      url: window.location.origin,
-    });
-  }, []);
+  const homeFaq = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      { "@type": "Question", name: "What is Betfair Cricket Hub?", acceptedAnswer: { "@type": "Answer", text: "Betfair is India's premium cricket destination featuring live scores, deep statistics, fan predictions, player rankings and a 24/7 community — all in a single, fast dashboard." } },
+      { "@type": "Question", name: "Is Betfair free to use?", acceptedAnswer: { "@type": "Answer", text: "Yes — live scores, stats, blog articles and community access are completely free." } },
+      { "@type": "Question", name: "How accurate are the live cricket scores?", acceptedAnswer: { "@type": "Answer", text: "Our live scoreboard updates in under one second from the venue, faster than most TV broadcasts which carry a 5–8 second delay." } },
+      { "@type": "Question", name: "Where can I read in-depth cricket analysis?", acceptedAnswer: { "@type": "Answer", text: "The Betfair blog publishes long-form analysis on IPL power rankings, prediction strategy, player watchlists and statistics explainers — visit /blog." } },
+    ],
+  };
 
   return (
     <div id="top" className="min-h-screen bg-background pb-16 lg:pb-0">
+      <Seo
+        title="Betfair — India's Premium Cricket Stats, Live Scores & Predictions Hub"
+        description="Live cricket scores, deep IPL stats, fan predictions, top batter & bowler rankings and a 24/7 cricket community. Updated in under 1 second from the venue."
+        canonical="/"
+        keywords="live cricket scores, IPL 2026 stats, cricket predictions India, top cricket batters, top cricket bowlers, cricket community, Betfair cricket"
+        jsonLd={[orgJsonLd, websiteJsonLd, breadcrumbJsonLd([{ name: "Home", url: "/" }]), homeFaq]}
+      />
       <Header />
       <main>
         <h1 className="sr-only">Betfair — India's Premium Cricket Stats and Predictions Hub</h1>
@@ -64,6 +44,24 @@ const Index = () => {
         <div id="stats"><PlayerStats /></div>
         <Features />
         <div id="standings"><Leaderboard /></div>
+        <section aria-labelledby="latest-blog" className="container py-12">
+          <div className="mb-6 flex items-end justify-between">
+            <div>
+              <h2 id="latest-blog" className="text-2xl font-extrabold tracking-tight md:text-3xl">From the cricket blog</h2>
+              <p className="text-sm text-muted-foreground">Long-form analysis, prediction strategy and player watchlists.</p>
+            </div>
+            <Link to="/blog" className="text-sm font-semibold text-gold hover:underline">View all →</Link>
+          </div>
+          <div className="grid gap-4 md:grid-cols-3">
+            {POSTS.slice(0, 6).map((p) => (
+              <Link key={p.slug} to={`/blog/${p.slug}`} className="group rounded-xl border border-border bg-card p-5 transition-all hover:border-gold/60">
+                <div className="text-[10px] uppercase tracking-wider text-gold">{p.category}</div>
+                <h3 className="mt-2 text-base font-bold leading-snug group-hover:text-gold">{p.title}</h3>
+                <p className="mt-2 text-xs text-muted-foreground line-clamp-2">{p.excerpt}</p>
+              </Link>
+            ))}
+          </div>
+        </section>
       </main>
       <Footer />
       <WhatsAppButton />
