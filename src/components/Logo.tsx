@@ -9,7 +9,7 @@ export const Logo = ({ className = "" }: { className?: string }) => (
     </div>
     <div className="leading-none">
       <div className="text-lg font-extrabold tracking-tight text-gold-foreground">
-        Pitch<span className="opacity-70">Pro</span>
+        Bet<span className="opacity-70">fair</span>
       </div>
       <div className="text-[10px] font-semibold uppercase tracking-[0.2em] text-gold-foreground/70">
         Exchange • Stats
