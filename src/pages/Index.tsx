@@ -13,7 +13,7 @@ import { BottomNav } from "@/components/BottomNav";
 
 const Index = () => {
   useEffect(() => {
-    document.title = "PitchPro — India's Premium Cricket Stats & Predictions Hub";
+    document.title = "Betfair — India's Premium Cricket Stats & Predictions Hub";
     const setMeta = (name: string, content: string, attr: "name" | "property" = "name") => {
       let el = document.querySelector(`meta[${attr}="${name}"]`) as HTMLMetaElement | null;
       if (!el) {
@@ -23,8 +23,8 @@ const Index = () => {
       }
       el.setAttribute("content", content);
     };
-    setMeta("description", "PitchPro — India's premium cricket hub. Live scores, deep stats, fan predictions, top player rankings and a buzzing community.");
-    setMeta("og:title", "PitchPro — Cricket Stats & Predictions Hub", "property");
+    setMeta("description", "Betfair — India's premium cricket hub. Live scores, deep stats, fan predictions, top player rankings and a buzzing community.");
+    setMeta("og:title", "Betfair — Cricket Stats & Predictions Hub", "property");
     setMeta("og:description", "Live cricket scores, deep stats, fan predictions and community chat — all in one beautifully crafted dashboard.", "property");
     setMeta("og:type", "website", "property");
 
@@ -46,7 +46,7 @@ const Index = () => {
     ld.textContent = JSON.stringify({
       "@context": "https://schema.org",
       "@type": "WebSite",
-      name: "PitchPro",
+      name: "Betfair",
       description: "India's premium cricket stats and predictions hub.",
       url: window.location.origin,
     });
@@ -56,7 +56,7 @@ const Index = () => {
     <div id="top" className="min-h-screen bg-background pb-16 lg:pb-0">
       <Header />
       <main>
-        <h1 className="sr-only">PitchPro — India's Premium Cricket Stats and Predictions Hub</h1>
+        <h1 className="sr-only">Betfair — India's Premium Cricket Stats and Predictions Hub</h1>
         <Hero />
         <PromoSlider />
         <div id="matches"><LiveMatches /></div>

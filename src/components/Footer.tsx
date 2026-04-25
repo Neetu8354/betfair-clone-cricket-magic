@@ -29,7 +29,7 @@ export const Footer = () => (
         ))}
       </div>
       <div className="mt-10 border-t border-border pt-6 text-center text-xs text-muted-foreground">
-        © {new Date().getFullYear()} PitchPro. Cricket stats, predictions & community. Not affiliated with any league or operator.
+        © {new Date().getFullYear()} Betfair. Cricket stats, predictions & community. Not affiliated with any league or operator.
       </div>
     </div>
   </footer>

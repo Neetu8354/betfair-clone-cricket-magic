@@ -1,5 +1,5 @@
 export const SITE = {
-  name: "PitchPro",
+  name: "Betfair",
   tagline: "India's Premium Cricket Stats & Predictions Hub",
   whatsapp: "https://wa.link/reddyanna_",
   currency: "₹",

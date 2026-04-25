@@ -12,7 +12,7 @@ export const Logo = ({ className = "" }: { className?: string }) => (
         Pitch<span className="opacity-70">Pro</span>
       </div>
       <div className="text-[10px] font-semibold uppercase tracking-[0.2em] text-gold-foreground/70">
-        Stats • Predictions
+        Exchange • Stats
       </div>
     </div>
   </div>
