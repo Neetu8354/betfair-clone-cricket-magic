@@ -6,7 +6,7 @@ import { SITE } from "@/lib/site";
 export const Hero = () => (
   <section className="relative overflow-hidden">
     <div className="absolute inset-0">
-      <img src={heroImg} alt="Live cricket stadium with batsman hitting a six" width={1920} height={896} className="h-full w-full object-cover" />
+      <img src={heroImg} alt="Live cricket stadium with batsman hitting a six" width={1920} height={896} fetchPriority="high" decoding="async" className="h-full w-full object-cover" />
       <div className="absolute inset-0 bg-gradient-hero" />
       <div className="absolute inset-0 bg-background/40" />
     </div>
