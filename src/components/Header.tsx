@@ -2,8 +2,15 @@ import { Menu, MessageCircle, Bell } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Logo } from "./Logo";
 import { SITE } from "@/lib/site";
+import { Link } from "react-router-dom";
 
-const nav = ["Live Scores", "Fixtures", "Stats", "Standings", "News"];
+const nav: { label: string; href: string; internal?: boolean }[] = [
+  { label: "Live Scores", href: "/#matches", internal: true },
+  { label: "Stats", href: "/#stats", internal: true },
+  { label: "Standings", href: "/#standings", internal: true },
+  { label: "Blog", href: "/blog", internal: true },
+  { label: "Community", href: SITE.whatsapp },
+];
 
 export const Header = () => {
   return (
@@ -13,9 +20,15 @@ export const Header = () => {
           <Logo />
           <nav className="hidden lg:flex items-center gap-6">
             {nav.map((n) => (
-              <a key={n} href={SITE.whatsapp} target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-gold-foreground/85 transition-colors hover:text-gold-foreground">
-                {n}
-              </a>
+              n.internal ? (
+                <Link key={n.label} to={n.href} className="text-sm font-semibold text-gold-foreground/85 transition-colors hover:text-gold-foreground">
+                  {n.label}
+                </Link>
+              ) : (
+                <a key={n.label} href={n.href} target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-gold-foreground/85 transition-colors hover:text-gold-foreground">
+                  {n.label}
+                </a>
+              )
             ))}
           </nav>
         </div>
