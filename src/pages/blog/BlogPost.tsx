@@ -289,14 +289,22 @@ const BlogPost = () => {
         )}
 
         {related.length > 0 && (
-          <section aria-label="Related articles" className="mt-12">
-            <h2 className="mb-4 text-2xl font-extrabold">Related reads</h2>
+          <section aria-label="Related articles" className="mt-14">
+            <h2 className="mb-5 font-display text-2xl font-bold tracking-tight">Related reads</h2>
             <div className="grid gap-4 md:grid-cols-3">
               {related.map((r) => (
-                <Link key={r.slug} to={`/blog/${r.slug}`} className="group rounded-xl border border-border bg-card p-4 transition-all hover:border-gold/60">
-                  <div className="text-[10px] uppercase tracking-wider text-gold">{r.category}</div>
-                  <h3 className="mt-1 text-sm font-bold leading-snug group-hover:text-gold">{r.title}</h3>
-                  <span className="mt-2 inline-flex items-center gap-1 text-xs text-muted-foreground">Read <ArrowRight className="h-3 w-3" /></span>
+                <Link
+                  key={r.slug}
+                  to={`/blog/${r.slug}`}
+                  className="group flex h-full flex-col rounded-2xl border border-border bg-gradient-card p-5 shadow-card-elevated transition-all hover:-translate-y-0.5 hover:border-gold/50 hover:shadow-gold"
+                >
+                  <div className="mb-2 inline-flex w-fit rounded-full border border-gold/30 bg-gold/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.2em] text-gold">
+                    {r.category}
+                  </div>
+                  <h3 className="font-display text-sm font-bold leading-snug group-hover:text-gold">{r.title}</h3>
+                  <span className="mt-auto inline-flex items-center gap-1 pt-3 text-xs font-semibold text-gold">
+                    Read <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
+                  </span>
                 </Link>
               ))}
             </div>
