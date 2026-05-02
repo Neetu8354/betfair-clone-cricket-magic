@@ -39,9 +39,9 @@ export const Hero = () => (
     </div>
 
     <div className="container relative z-10 flex min-h-[88vh] flex-col items-start justify-center py-20 sm:py-24">
-      <div className="eyebrow animate-fade-up">
+      <div className="eyebrow animate-fade-up max-w-full">
         <Sparkles className="h-3.5 w-3.5 shrink-0" />
-        <span className="truncate">Live Stats • Predictions • Community</span>
+        <span className="leading-tight">Live • Predictions • Community</span>
       </div>
 
       <h1 className="mt-6 max-w-4xl font-display text-[40px] font-bold leading-[1.05] tracking-tight text-foreground sm:text-5xl md:text-7xl lg:text-[88px]">
