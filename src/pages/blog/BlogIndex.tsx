@@ -6,6 +6,7 @@ import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { Seo, breadcrumbJsonLd, websiteJsonLd, orgJsonLd, SITE_URL } from "@/components/seo/Seo";
 import { POSTS } from "@/data/posts";
 import { Calendar, Clock, Tag } from "lucide-react";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 
 const BlogIndex = () => {
   const itemListJsonLd = {
@@ -38,11 +39,7 @@ const BlogIndex = () => {
       />
       <Header />
       <main className="container py-10">
-        <nav aria-label="Breadcrumb" className="mb-4 text-xs text-muted-foreground">
-          <Link to="/" className="hover:text-foreground">Home</Link>
-          <span className="mx-2">/</span>
-          <span className="text-foreground">Blog</span>
-        </nav>
+        <Breadcrumbs items={[{ label: "Blog" }]} className="mb-6" />
 
         <header className="mb-10">
           <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl">

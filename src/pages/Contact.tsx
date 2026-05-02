@@ -12,6 +12,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { toast } from "@/hooks/use-toast";
 import { SITE } from "@/lib/site";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 
 const Contact = () => {
   const [sent, setSent] = useState(false);
@@ -68,11 +69,7 @@ const Contact = () => {
       />
       <Header />
       <main className="container py-10">
-        <nav aria-label="Breadcrumb" className="mb-6 text-sm text-muted-foreground">
-          <Link to="/" className="hover:text-foreground">Home</Link>
-          <span className="mx-2">/</span>
-          <span className="text-foreground">Contact</span>
-        </nav>
+        <Breadcrumbs items={[{ label: "Contact" }]} className="mb-6" />
 
         <header className="mx-auto max-w-3xl text-center">
           <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl">Talk to the Betfair team</h1>

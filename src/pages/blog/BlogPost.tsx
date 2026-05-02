@@ -7,6 +7,7 @@ import { Seo, breadcrumbJsonLd, orgJsonLd, SITE_URL } from "@/components/seo/Seo
 import { getPost, relatedPosts, POSTS, Block } from "@/data/posts";
 import { Calendar, Clock, ArrowRight, BadgeCheck } from "lucide-react";
 import { SITE } from "@/lib/site";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 
 const renderBlock = (b: Block, i: number) => {
   switch (b.type) {
@@ -134,13 +135,13 @@ const BlogPost = () => {
       />
       <Header />
       <main className="container max-w-3xl py-8">
-        <nav aria-label="Breadcrumb" className="mb-4 text-xs text-muted-foreground">
-          <Link to="/" className="hover:text-foreground">Home</Link>
-          <span className="mx-2">/</span>
-          <Link to="/blog" className="hover:text-foreground">Blog</Link>
-          <span className="mx-2">/</span>
-          <span className="text-foreground line-clamp-1">{post.title}</span>
-        </nav>
+        <Breadcrumbs
+          items={[
+            { label: "Blog", to: "/blog" },
+            { label: post.title },
+          ]}
+          className="mb-6"
+        />
 
         <header className="mb-6">
           <div className="mb-3 inline-block rounded-full border border-gold/40 bg-gold/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-gold">
