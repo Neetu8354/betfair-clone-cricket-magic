@@ -12,10 +12,17 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 const renderBlock = (b: Block, i: number) => {
   switch (b.type) {
     case "p":
-      return <p key={i} className="my-4 text-base leading-relaxed text-foreground/90">{b.text}</p>;
+      return (
+        <p
+          key={i}
+          className="my-5 text-[17px] leading-[1.75] text-foreground/90 first-of-type:first-letter:float-left first-of-type:first-letter:mr-2 first-of-type:first-letter:mt-1 first-of-type:first-letter:font-display first-of-type:first-letter:text-5xl first-of-type:first-letter:font-bold first-of-type:first-letter:text-gold"
+        >
+          {b.text}
+        </p>
+      );
     case "linkp":
       return (
-        <p key={i} className="my-4 text-base leading-relaxed text-foreground/90">
+        <p key={i} className="my-5 text-[17px] leading-[1.75] text-foreground/90">
           {b.parts.map((part, j) =>
             typeof part === "string" ? (
               <span key={j}>{part}</span>
@@ -28,9 +35,17 @@ const renderBlock = (b: Block, i: number) => {
         </p>
       );
     case "h2":
-      return <h2 key={i} id={b.id} className="mt-10 mb-3 text-2xl font-extrabold tracking-tight scroll-mt-20">{b.text}</h2>;
+      return (
+        <h2
+          key={i}
+          id={b.id}
+          className="mt-12 mb-4 font-display text-2xl font-bold tracking-tight scroll-mt-24 md:text-3xl"
+        >
+          {b.text}
+        </h2>
+      );
     case "h3":
-      return <h3 key={i} id={b.id} className="mt-6 mb-2 text-xl font-bold scroll-mt-20">{b.text}</h3>;
+      return <h3 key={i} id={b.id} className="mt-8 mb-2 font-display text-xl font-bold scroll-mt-24">{b.text}</h3>;
     case "ul":
       return (
         <ul key={i} className="my-4 list-disc space-y-2 pl-6 text-foreground/90">
@@ -51,7 +66,11 @@ const renderBlock = (b: Block, i: number) => {
       );
     case "callout":
       return (
-        <aside key={i} className="my-6 rounded-lg border border-gold/40 bg-gold/10 p-4 text-sm text-foreground">
+        <aside
+          key={i}
+          className="my-7 rounded-2xl border border-gold/30 bg-gold/[0.06] p-5 text-sm leading-relaxed text-foreground shadow-card-elevated"
+        >
+          <div className="mb-1 text-[10px] font-bold uppercase tracking-[0.2em] text-gold">Key takeaway</div>
           {b.text}
         </aside>
       );
