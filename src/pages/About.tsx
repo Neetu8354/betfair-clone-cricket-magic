@@ -6,6 +6,7 @@ import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { Seo, breadcrumbJsonLd, orgJsonLd } from "@/components/seo/Seo";
 import { Trophy, Users, BarChart3, Shield, Sparkles, Target } from "lucide-react";
 import { SITE } from "@/lib/site";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 
 const About = () => {
   const aboutJsonLd = {
@@ -68,11 +69,7 @@ const About = () => {
       />
       <Header />
       <main className="container py-10">
-        <nav aria-label="Breadcrumb" className="mb-6 text-sm text-muted-foreground">
-          <Link to="/" className="hover:text-foreground">Home</Link>
-          <span className="mx-2">/</span>
-          <span className="text-foreground">About</span>
-        </nav>
+        <Breadcrumbs items={[{ label: "About" }]} className="mb-6" />
 
         <header className="mx-auto max-w-3xl text-center">
           <p className="mb-3 inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-gold">

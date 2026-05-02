@@ -12,17 +12,23 @@ import { BottomNav } from "@/components/BottomNav";
 import { Seo, orgJsonLd, websiteJsonLd, breadcrumbJsonLd, SITE_URL } from "@/components/seo/Seo";
 import { POSTS } from "@/data/posts";
 import { Link } from "react-router-dom";
+import { HelpCircle } from "lucide-react";
 
 const Index = () => {
+  const faqs = [
+    { q: "What is Betfair Cricket Hub?", a: "Betfair is India's premium cricket destination featuring live scores, deep statistics, fan predictions, player rankings and a 24/7 community — all in a single, fast dashboard." },
+    { q: "Is Betfair free to use?", a: "Yes — live scores, stats, blog articles and community access are completely free." },
+    { q: "How accurate are the live cricket scores?", a: "Our live scoreboard updates in under one second from the venue, faster than most TV broadcasts which carry a 5–8 second delay." },
+    { q: "Where can I read in-depth cricket analysis?", a: "The Betfair blog publishes long-form analysis on IPL power rankings, prediction strategy, player watchlists and statistics explainers — visit the blog from the navigation." },
+  ];
   const homeFaq = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: [
-      { "@type": "Question", name: "What is Betfair Cricket Hub?", acceptedAnswer: { "@type": "Answer", text: "Betfair is India's premium cricket destination featuring live scores, deep statistics, fan predictions, player rankings and a 24/7 community — all in a single, fast dashboard." } },
-      { "@type": "Question", name: "Is Betfair free to use?", acceptedAnswer: { "@type": "Answer", text: "Yes — live scores, stats, blog articles and community access are completely free." } },
-      { "@type": "Question", name: "How accurate are the live cricket scores?", acceptedAnswer: { "@type": "Answer", text: "Our live scoreboard updates in under one second from the venue, faster than most TV broadcasts which carry a 5–8 second delay." } },
-      { "@type": "Question", name: "Where can I read in-depth cricket analysis?", acceptedAnswer: { "@type": "Answer", text: "The Betfair blog publishes long-form analysis on IPL power rankings, prediction strategy, player watchlists and statistics explainers — visit /blog." } },
-    ],
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
   };
 
   return (
@@ -60,6 +66,28 @@ const Index = () => {
                 <p className="mt-2 text-xs text-muted-foreground line-clamp-2">{p.excerpt}</p>
               </Link>
             ))}
+          </div>
+        </section>
+        <section aria-labelledby="home-faq" className="container py-12">
+          <div className="mx-auto max-w-3xl">
+            <div className="mb-6 text-center">
+              <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-gold">
+                <HelpCircle className="h-3 w-3" /> FAQ
+              </div>
+              <h2 id="home-faq" className="text-2xl font-extrabold tracking-tight md:text-3xl">Frequently asked questions</h2>
+              <p className="mt-2 text-sm text-muted-foreground">Quick answers about Betfair Cricket Hub, our live scores and community.</p>
+            </div>
+            <div className="space-y-3">
+              {faqs.map((f, i) => (
+                <details key={i} className="group rounded-xl border border-border bg-card p-4 transition-colors hover:border-gold/40">
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-base font-semibold text-foreground">
+                    <span>{f.q}</span>
+                    <span className="text-gold transition-transform group-open:rotate-45 text-xl leading-none">+</span>
+                  </summary>
+                  <p className="mt-3 text-sm text-foreground/80">{f.a}</p>
+                </details>
+              ))}
+            </div>
           </div>
         </section>
       </main>
