@@ -21,7 +21,7 @@ const Contact = () => {
     "@context": "https://schema.org",
     "@type": "ContactPage",
     name: "Contact Betfair Cricket Hub",
-    url: "https://sports-casino-clone.lovable.app/contact",
+    url: "https://betfairplays.live/contact",
     description: "Get in touch with the Betfair editorial team for cricket coverage, partnerships, corrections or community questions.",
     publisher: orgJsonLd,
   };

@@ -15,7 +15,7 @@ type Props = {
   locale?: string;
 };
 
-const SITE_URL = "https://sports-casino-clone.lovable.app";
+const SITE_URL = "https://betfairplays.live";
 const DEFAULT_IMG = `/og-default.jpg`;
 
 const absUrl = (path: string) =>
