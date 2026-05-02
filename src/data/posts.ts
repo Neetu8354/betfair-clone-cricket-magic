@@ -11,12 +11,21 @@ export type Post = {
   keywords: string;
   cover?: string;
   faq?: { q: string; a: string }[];
+  author?: Author;
   // Content as semantic blocks for clean render + AEO
   content: Block[];
 };
 
+export type Author = {
+  name: string;
+  role: string;
+  bio: string;
+  credentials?: string[];
+};
+
 export type Block =
   | { type: "p"; text: string }
+  | { type: "linkp"; parts: (string | { text: string; href: string })[] }
   | { type: "h2"; text: string; id?: string }
   | { type: "h3"; text: string; id?: string }
   | { type: "ul"; items: string[] }
@@ -26,6 +35,33 @@ export type Block =
   | { type: "table"; headers: string[]; rows: string[][] };
 
 const today = "2026-04-20";
+
+const AUTHORS: Record<string, Author> = {
+  rohan: {
+    name: "Rohan Mehta",
+    role: "Lead Cricket Analyst, Betfair Editorial",
+    bio: "Rohan has spent eight years building T20 and IPL prediction models, with prior stints at two analytics startups. He writes Betfair's tactical breakdowns and IPL power rankings.",
+    credentials: ["8+ yrs cricket analytics", "Built 3 public T20 models", "IPL ball-by-bythe-ball researcher"],
+  },
+  aditi: {
+    name: "Aditi Sharma",
+    role: "Senior Editor, Stats & Player Coverage",
+    bio: "Aditi covers player form, batter and bowler watchlists, and explains advanced cricket stats in plain English for the Betfair community.",
+    credentials: ["Ex-sports newsroom editor", "Specialises in T20 player analytics"],
+  },
+  vikram: {
+    name: "Vikram Iyer",
+    role: "Strategy Writer, Predictions & Models",
+    bio: "Vikram writes Betfair's prediction strategy guides and model explainers, focused on translating Bayesian thinking into match-day workflows fans can actually use.",
+    credentials: ["Statistics background", "Author of the Betfair predictions playbook"],
+  },
+  sana: {
+    name: "Sana Kapoor",
+    role: "Community & Glossary Lead",
+    bio: "Sana runs the Betfair WhatsApp community and maintains the Betfair cricket glossary so newcomers always feel welcome.",
+    credentials: ["Community lead, 25k+ fans", "Glossary maintainer"],
+  },
+};
 
 export const POSTS: Post[] = [
   {
