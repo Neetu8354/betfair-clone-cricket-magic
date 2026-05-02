@@ -55,7 +55,7 @@ export const Footer = () => (
         <form
           onSubmit={(e) => e.preventDefault()}
           className="flex flex-col gap-2 sm:flex-row"
-          aria-label="Subscribe to the Betfair cricket newsletter"
+          aria-label="Subscribe to the Betfair365 cricket newsletter"
         >
           <label htmlFor="newsletter-email" className="sr-only">Email address</label>
           <input
@@ -146,7 +146,7 @@ export const Footer = () => (
       </div>
 
       <div className="mt-10 flex flex-col items-center justify-between gap-3 border-t border-border pt-6 text-xs text-muted-foreground sm:flex-row">
-        <span>© {new Date().getFullYear()} Betfair. Cricket stats, predictions & community.</span>
+        <span>© {new Date().getFullYear()} Betfair365. Cricket stats, predictions & community.</span>
         <span className="text-muted-foreground/80">
           Not affiliated with any league or operator. India's premium cricket hub.
         </span>

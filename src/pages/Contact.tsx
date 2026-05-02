@@ -20,9 +20,9 @@ const Contact = () => {
   const contactJsonLd = {
     "@context": "https://schema.org",
     "@type": "ContactPage",
-    name: "Contact Betfair Cricket Hub",
+    name: "Contact Betfair365 Cricket Hub",
     url: "https://betfair365s.live/contact",
-    description: "Get in touch with the Betfair editorial team for cricket coverage, partnerships, corrections or community questions.",
+    description: "Get in touch with the Betfair365 editorial team for cricket coverage, partnerships, corrections or community questions.",
     publisher: orgJsonLd,
   };
 
@@ -54,8 +54,8 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-background pb-16 lg:pb-0">
       <Seo
-        title="Contact Betfair — Cricket Editorial, Partnerships & Support"
-        description="Contact the Betfair Cricket Hub team for editorial pitches, partnerships, corrections or community help. WhatsApp support available 7 days a week."
+        title="Contact Betfair365 — Cricket Editorial, Partnerships & Support"
+        description="Contact the Betfair365 Cricket Hub team for editorial pitches, partnerships, corrections or community help. WhatsApp support available 7 days a week."
         canonical="/contact"
         keywords="contact betfair, cricket blog contact, cricket editorial pitch, betfair support, cricket community help"
         jsonLd={[
@@ -72,7 +72,7 @@ const Contact = () => {
         <Breadcrumbs items={[{ label: "Contact" }]} className="mb-6" />
 
         <header className="mx-auto max-w-3xl text-center">
-          <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl">Talk to the Betfair team</h1>
+          <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl">Talk to the Betfair365 team</h1>
           <p className="mt-4 text-lg text-muted-foreground">
             Editorial pitches, partnership ideas, corrections, or just a great cricket take — we read everything.
           </p>

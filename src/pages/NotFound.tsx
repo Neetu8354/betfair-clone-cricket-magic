@@ -16,8 +16,8 @@ const NotFound = () => {
   return (
     <div className="min-h-screen bg-background pb-16 lg:pb-0">
       <Seo
-        title="Page not found (404) | Betfair Cricket Hub"
-        description="The page you're looking for doesn't exist. Head back to the Betfair home page or browse our cricket blog."
+        title="Page not found (404) | Betfair365 Cricket Hub"
+        description="The page you're looking for doesn't exist. Head back to the Betfair365 home page or browse our cricket blog."
         noindex
       />
       <Header />

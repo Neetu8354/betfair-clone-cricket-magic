@@ -16,10 +16,10 @@ import { HelpCircle, ArrowRight, Calendar, Clock, Newspaper } from "lucide-react
 
 const Index = () => {
   const faqs = [
-    { q: "What is Betfair Cricket Hub?", a: "Betfair is India's premium cricket destination featuring live scores, deep statistics, fan predictions, player rankings and a 24/7 community — all in a single, fast dashboard." },
-    { q: "Is Betfair free to use?", a: "Yes — live scores, stats, blog articles and community access are completely free." },
+    { q: "What is Betfair365 Cricket Hub?", a: "Betfair365 is India's premium cricket destination featuring live scores, deep statistics, fan predictions, player rankings and a 24/7 community — all in a single, fast dashboard." },
+    { q: "Is Betfair365 free to use?", a: "Yes — live scores, stats, blog articles and community access are completely free." },
     { q: "How accurate are the live cricket scores?", a: "Our live scoreboard updates in under one second from the venue, faster than most TV broadcasts which carry a 5–8 second delay." },
-    { q: "Where can I read in-depth cricket analysis?", a: "The Betfair blog publishes long-form analysis on IPL power rankings, prediction strategy, player watchlists and statistics explainers — visit the blog from the navigation." },
+    { q: "Where can I read in-depth cricket analysis?", a: "The Betfair365 blog publishes long-form analysis on IPL power rankings, prediction strategy, player watchlists and statistics explainers — visit the blog from the navigation." },
   ];
   const homeFaq = {
     "@context": "https://schema.org",
@@ -34,15 +34,15 @@ const Index = () => {
   return (
     <div id="top" className="min-h-screen bg-background pb-16 lg:pb-0">
       <Seo
-        title="Betfair — India's Premium Cricket Stats, Live Scores & Predictions Hub"
+        title="Betfair365 — India's Premium Cricket Stats, Live Scores & Predictions Hub"
         description="Live cricket scores, deep IPL stats, fan predictions, top batter & bowler rankings and a 24/7 cricket community. Updated in under 1 second from the venue."
         canonical="/"
-        keywords="live cricket scores, IPL 2026 stats, cricket predictions India, top cricket batters, top cricket bowlers, cricket community, Betfair cricket"
+        keywords="live cricket scores, IPL 2026 stats, cricket predictions India, top cricket batters, top cricket bowlers, cricket community, Betfair365 cricket"
         jsonLd={[orgJsonLd, websiteJsonLd, breadcrumbJsonLd([{ name: "Home", url: "/" }]), homeFaq]}
       />
       <Header />
       <main>
-        <h1 className="sr-only">Betfair — India's Premium Cricket Stats and Predictions Hub</h1>
+        <h1 className="sr-only">Betfair365 — India's Premium Cricket Stats and Predictions Hub</h1>
         <Hero />
         <PromoSlider />
         <div id="matches"><LiveMatches /></div>
@@ -112,7 +112,7 @@ const Index = () => {
                   Frequently asked questions
                 </h2>
                 <p className="mt-3 text-sm text-muted-foreground">
-                  Quick answers about Betfair Cricket Hub, our live scores and community.
+                  Quick answers about Betfair365 Cricket Hub, our live scores and community.
                 </p>
               </div>
               <div className="space-y-3">

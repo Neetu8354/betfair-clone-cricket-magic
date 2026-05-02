@@ -24,7 +24,7 @@ const AuthorProfile = () => {
     description: author.longBio || author.bio,
     url,
     email: author.email,
-    worksFor: { "@type": "Organization", name: "Betfair", url: SITE_URL },
+    worksFor: { "@type": "Organization", name: "Betfair365", url: SITE_URL },
     knowsAbout: author.expertise,
     address: author.location
       ? { "@type": "PostalAddress", addressLocality: author.location }
@@ -49,8 +49,8 @@ const AuthorProfile = () => {
   return (
     <div className="min-h-screen bg-background pb-16 lg:pb-0">
       <Seo
-        title={`${author.name} — ${author.role} | Betfair`}
-        description={`${author.name} is a verified Betfair editorial author. ${author.bio}`}
+        title={`${author.name} — ${author.role} | Betfair365`}
+        description={`${author.name} is a verified Betfair365 editorial author. ${author.bio}`}
         canonical={`/authors/${author.slug}`}
         keywords={`${author.name}, ${(author.expertise || []).join(", ")}, betfair editorial`}
         type="article"
@@ -82,7 +82,7 @@ const AuthorProfile = () => {
                 {author.verified && (
                   <span
                     className="inline-flex items-center gap-1 rounded-full border border-gold/30 bg-gold/10 px-2 py-0.5 text-[11px] font-bold uppercase tracking-wider text-gold"
-                    title="Verified Betfair editorial author"
+                    title="Verified Betfair365 editorial author"
                   >
                     <BadgeCheck className="h-3.5 w-3.5" aria-hidden="true" />
                     Verified
@@ -240,7 +240,7 @@ const AuthorProfile = () => {
         <section className="mt-10 rounded-xl border border-border bg-card p-5">
           <h2 className="mb-2 text-base font-bold">Editorial standards</h2>
           <p className="text-sm text-foreground/85">
-            Every Betfair article is written or reviewed by a verified
+            Every Betfair365 article is written or reviewed by a verified
             specialist on our editorial team. Read more about our{" "}
             <Link to="/about" className="font-semibold text-gold underline-offset-4 hover:underline">
               editorial mission

@@ -2,7 +2,7 @@ export const Logo = ({ className = "" }: { className?: string }) => (
   <div
     className={`flex items-center gap-2.5 ${className}`}
     role="img"
-    aria-label="Betfair Cricket Hub logo"
+    aria-label="Betfair365 Cricket Hub logo"
   >
     <div className="relative flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-gold shadow-gold ring-1 ring-gold/40">
       <svg

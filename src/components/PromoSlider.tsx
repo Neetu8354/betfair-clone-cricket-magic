@@ -12,21 +12,21 @@ const slides = [
     title: "IPL Prediction Cup",
     subtitle: "Predict every match. Climb the leaderboard.",
     cta: "Play Cricket",
-    alt: "Betfair IPL 2026 prediction cup banner with cricket trophy and Indian fan crowd",
+    alt: "Betfair365 IPL 2026 prediction cup banner with cricket trophy and Indian fan crowd",
   },
   {
     img: promo2,
     title: "Royal Casino Night",
     subtitle: "Cards, dice & big moments — zero risk.",
     cta: "Enter Casino",
-    alt: "Betfair royal casino night promo featuring cards, dice and golden chips on a dark table",
+    alt: "Betfair365 royal casino night promo featuring cards, dice and golden chips on a dark table",
   },
   {
     img: promo3,
     title: "Daily ₹50,000 Coin Drop",
     subtitle: "Login daily and grab free virtual coins.",
     cta: "Claim Now",
-    alt: "Daily 50,000 virtual coin drop reward banner for Betfair cricket community members",
+    alt: "Daily 50,000 virtual coin drop reward banner for Betfair365 cricket community members",
   },
 ];
 
