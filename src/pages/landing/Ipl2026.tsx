@@ -38,6 +38,7 @@ const Ipl2026 = () => (
       description="Your IPL 2026 hub: data-driven power rankings, live ball-by-ball scores, top batter and bowler watchlists, fixtures and the Betfair fan-prediction community."
       canonical="/ipl-2026"
       keywords="IPL 2026, IPL 2026 schedule, IPL 2026 power rankings, IPL 2026 live score, IPL 2026 predictions, IPL 2026 teams, IPL 2026 stats"
+      image="/og-ipl-2026.jpg"
       jsonLd={[
         orgJsonLd,
         breadcrumbJsonLd([{ name: "Home", url: "/" }, { name: "IPL 2026", url: "/ipl-2026" }]),
