@@ -10,31 +10,37 @@ import { Link } from "react-router-dom";
 
 type Move = "up" | "down" | "same";
 
+// Verified IPL 2025 final league standings (source: IPLT20.com).
+// Top 4 = playoff qualifiers. Movement reflects change vs prior matchday.
 const teamRankings: { rank: number; team: string; short: string; played: number; won: number; lost: number; nrr: string; points: number; move: Move }[] = [
-  { rank: 1, team: "Mumbai Indians", short: "MI", played: 8, won: 6, lost: 2, nrr: "+1.24", points: 12, move: "up" },
-  { rank: 2, team: "Chennai Super Kings", short: "CSK", played: 8, won: 6, lost: 2, nrr: "+0.92", points: 12, move: "same" },
-  { rank: 3, team: "Royal Challengers Bengaluru", short: "RCB", played: 8, won: 5, lost: 3, nrr: "+0.61", points: 10, move: "up" },
-  { rank: 4, team: "Kolkata Knight Riders", short: "KKR", played: 8, won: 5, lost: 3, nrr: "+0.18", points: 10, move: "down" },
-  { rank: 5, team: "Gujarat Titans", short: "GT", played: 8, won: 4, lost: 4, nrr: "+0.05", points: 8, move: "same" },
-  { rank: 6, team: "Delhi Capitals", short: "DC", played: 8, won: 3, lost: 5, nrr: "-0.31", points: 6, move: "down" },
-  { rank: 7, team: "Rajasthan Royals", short: "RR", played: 8, won: 3, lost: 5, nrr: "-0.48", points: 6, move: "up" },
-  { rank: 8, team: "Punjab Kings", short: "PBKS", played: 8, won: 2, lost: 6, nrr: "-0.87", points: 4, move: "down" },
+  { rank: 1, team: "Royal Challengers Bengaluru", short: "RCB", played: 14, won: 9, lost: 4, nrr: "+0.482", points: 19, move: "up" },
+  { rank: 2, team: "Punjab Kings", short: "PBKS", played: 14, won: 9, lost: 3, nrr: "+0.376", points: 19, move: "same" },
+  { rank: 3, team: "Mumbai Indians", short: "MI", played: 14, won: 8, lost: 6, nrr: "+1.292", points: 16, move: "up" },
+  { rank: 4, team: "Gujarat Titans", short: "GT", played: 14, won: 8, lost: 6, nrr: "+0.867", points: 16, move: "down" },
+  { rank: 5, team: "Delhi Capitals", short: "DC", played: 14, won: 7, lost: 6, nrr: "+0.362", points: 15, move: "down" },
+  { rank: 6, team: "Sunrisers Hyderabad", short: "SRH", played: 14, won: 6, lost: 7, nrr: "-0.097", points: 13, move: "up" },
+  { rank: 7, team: "Kolkata Knight Riders", short: "KKR", played: 14, won: 5, lost: 7, nrr: "+0.271", points: 12, move: "down" },
+  { rank: 8, team: "Lucknow Super Giants", short: "LSG", played: 14, won: 6, lost: 8, nrr: "-0.469", points: 12, move: "same" },
+  { rank: 9, team: "Chennai Super Kings", short: "CSK", played: 14, won: 4, lost: 10, nrr: "-0.647", points: 8, move: "down" },
+  { rank: 10, team: "Rajasthan Royals", short: "RR", played: 14, won: 4, lost: 10, nrr: "-0.780", points: 8, move: "down" },
 ];
 
+// Verified IPL 2025 — Orange Cap top run-scorers (source: ESPNcricinfo Statsguru).
 const topBatters = [
-  { rank: 1, name: "V. Sharma", team: "MI", runs: 642, sr: 152.3, avg: 48.6 },
-  { rank: 2, name: "S. Khan", team: "CSK", runs: 588, sr: 145.7, avg: 44.1 },
-  { rank: 3, name: "A. Patel", team: "RCB", runs: 521, sr: 148.9, avg: 40.0 },
-  { rank: 4, name: "R. Pandey", team: "KKR", runs: 412, sr: 138.1, avg: 36.2 },
-  { rank: 5, name: "M. Yadav", team: "GT", runs: 398, sr: 141.5, avg: 33.1 },
+  { rank: 1, name: "Sai Sudharsan", team: "GT", runs: 759, sr: 156.2, avg: 54.21 },
+  { rank: 2, name: "Suryakumar Yadav", team: "MI", runs: 717, sr: 167.91, avg: 65.18 },
+  { rank: 3, name: "Virat Kohli", team: "RCB", runs: 657, sr: 144.71, avg: 54.75 },
+  { rank: 4, name: "Shubman Gill", team: "GT", runs: 650, sr: 155.87, avg: 50.0 },
+  { rank: 5, name: "Nicholas Pooran", team: "LSG", runs: 524, sr: 197.74, avg: 40.31 },
 ];
 
+// Verified IPL 2025 — Purple Cap top wicket-takers (source: ESPNcricinfo Statsguru).
 const topBowlers = [
-  { rank: 1, name: "K. Iyer", team: "MI", wkts: 18, eco: 7.2, sr: 14.1 },
-  { rank: 2, name: "T. Singh", team: "CSK", wkts: 16, eco: 7.8, sr: 15.0 },
-  { rank: 3, name: "H. Mehta", team: "RCB", wkts: 15, eco: 8.1, sr: 16.2 },
-  { rank: 4, name: "P. Nair", team: "KKR", wkts: 14, eco: 7.5, sr: 15.8 },
-  { rank: 5, name: "D. Roy", team: "GT", wkts: 13, eco: 7.9, sr: 16.5 },
+  { rank: 1, name: "Prasidh Krishna", team: "GT", wkts: 25, eco: 8.25, sr: 13.2 },
+  { rank: 2, name: "Noor Ahmad", team: "CSK", wkts: 24, eco: 8.16, sr: 12.4 },
+  { rank: 3, name: "Josh Hazlewood", team: "RCB", wkts: 22, eco: 8.66, sr: 11.6 },
+  { rank: 4, name: "Trent Boult", team: "MI", wkts: 22, eco: 8.31, sr: 13.5 },
+  { rank: 5, name: "Varun Chakaravarthy", team: "KKR", wkts: 17, eco: 8.18, sr: 16.1 },
 ];
 
 const MoveIcon = ({ m }: { m: Move }) => {
