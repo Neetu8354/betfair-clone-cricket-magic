@@ -85,7 +85,7 @@ export const Header = () => {
           <Link
             to="/#matches"
             aria-label="Live cricket matches"
-            className="hidden md:inline-flex items-center gap-1.5 rounded-full border border-emerald/30 bg-emerald/10 px-3 py-1.5 text-[11px] font-bold uppercase tracking-wider text-emerald"
+            className="inline-flex items-center gap-1.5 rounded-full border border-emerald/30 bg-emerald/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-emerald sm:px-3 sm:py-1.5 sm:text-[11px]"
           >
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald opacity-75" />
