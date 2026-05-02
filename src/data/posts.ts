@@ -347,3 +347,13 @@ export const POSTS: Post[] = [
 export const getPost = (slug: string) => POSTS.find((p) => p.slug === slug);
 export const relatedPosts = (slug: string, n = 3) =>
   POSTS.filter((p) => p.slug !== slug).slice(0, n);
+
+export const getAuthor = (slug: string): Author | undefined =>
+  Object.values(AUTHORS).find((a) => a.slug === slug);
+
+export const postsByAuthor = (slug: string): Post[] =>
+  POSTS.filter((p) => p.author?.slug === slug).sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+  );
+
+export const ALL_AUTHORS: Author[] = Object.values(AUTHORS);
