@@ -12,7 +12,7 @@ import { BottomNav } from "@/components/BottomNav";
 import { Seo, orgJsonLd, websiteJsonLd, breadcrumbJsonLd, SITE_URL } from "@/components/seo/Seo";
 import { POSTS } from "@/data/posts";
 import { Link } from "react-router-dom";
-import { HelpCircle, ArrowRight, Calendar, Clock } from "lucide-react";
+import { HelpCircle, ArrowRight, Calendar, Clock, Newspaper } from "lucide-react";
 
 const Index = () => {
   const faqs = [
