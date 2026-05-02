@@ -1,13 +1,13 @@
-import { Home, BarChart3, Trophy, Activity, Newspaper } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
+import { Home, BarChart3, Trophy, Activity, Newspaper } from "lucide-react";
 
 type Item = { icon: typeof Home; label: string; to: string; match?: (path: string, hash: string) => boolean };
 
 const items: Item[] = [
   { icon: Home, label: "Home", to: "/", match: (p, h) => p === "/" && (h === "" || h === "#top") },
-  { icon: Activity, label: "Live", to: "/#matches", match: (p, h) => p === "/" && h === "#matches" },
-  { icon: BarChart3, label: "Stats", to: "/#stats", match: (p, h) => p === "/" && h === "#stats" },
-  { icon: Trophy, label: "Ranks", to: "/#standings", match: (p, h) => p === "/" && h === "#standings" },
+  { icon: Activity, label: "Live", to: "/live", match: (p) => p.startsWith("/live") },
+  { icon: BarChart3, label: "Stats", to: "/stats", match: (p) => p.startsWith("/stats") },
+  { icon: Trophy, label: "Ranks", to: "/rankings", match: (p) => p.startsWith("/rankings") },
   { icon: Newspaper, label: "Blog", to: "/blog", match: (p) => p.startsWith("/blog") },
 ];
 
