@@ -43,6 +43,36 @@
     <priority>0.95</priority>
   </url>
   <url>
+    <loc>https://betfairplays.live/authors</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://betfairplays.live/authors/rohan-mehta</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://betfairplays.live/authors/aditi-sharma</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://betfairplays.live/authors/vikram-iyer</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://betfairplays.live/authors/sana-kapoor</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://betfairplays.live/blog/ipl-2026-team-power-rankings</loc>
     <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
