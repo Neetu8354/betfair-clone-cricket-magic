@@ -69,13 +69,16 @@ const Rankings = () => (
       <Breadcrumbs items={[{ label: "Rankings" }]} className="mb-6" />
       <header className="mx-auto max-w-3xl text-center">
         <p className="mb-3 inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-gold">
-          <Trophy className="h-3 w-3" /> IPL 2026 Rankings
+          <Trophy className="h-3 w-3" /> IPL 2025 — Final Standings
         </p>
         <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl">
           Cricket <span className="text-gold">Rankings</span>
         </h1>
         <p className="mt-4 text-lg text-muted-foreground">
-          Live IPL 2026 standings, top batters, top bowlers and our community leaderboard — all on one page, refreshed every match day.
+          Final IPL 2025 league standings, Orange Cap leaders, Purple Cap leaders and our community fan leaderboard — all on one page.
+        </p>
+        <p className="mt-2 text-xs text-muted-foreground">
+          Source: IPLT20.com &amp; ESPNcricinfo Statsguru.
         </p>
       </header>
 
@@ -91,10 +94,10 @@ const Rankings = () => (
       <section id="teams" className="mt-12 scroll-mt-24">
         <div className="mb-4 flex flex-wrap items-end justify-between gap-3">
           <div>
-            <h2 className="text-2xl font-extrabold text-foreground md:text-3xl">IPL 2026 — Team Standings</h2>
-            <p className="text-sm text-muted-foreground">Top 4 qualify for playoffs. Sorted by Points, then Net Run Rate.</p>
+            <h2 className="text-2xl font-extrabold text-foreground md:text-3xl">IPL 2025 — Final Standings</h2>
+            <p className="text-sm text-muted-foreground">Top 4 qualified for playoffs. Sorted by Points, then Net Run Rate.</p>
           </div>
-          <span className="rounded-full border border-emerald/30 bg-emerald/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-emerald">Updated Live</span>
+          <span className="rounded-full border border-gold/30 bg-gold/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-gold">Season Final</span>
         </div>
 
         <div className="overflow-hidden rounded-2xl border border-border bg-gradient-card shadow-card-elevated">
