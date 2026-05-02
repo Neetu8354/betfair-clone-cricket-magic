@@ -55,7 +55,7 @@ export const Seo = ({
   keywords,
   publishedTime,
   modifiedTime,
-  author = "Betfair Editorial",
+  author = "BetfairPlays Live Editorial",
   noindex = false,
   locale = "en_IN",
 }: Props) => {
@@ -80,7 +80,7 @@ export const Seo = ({
     upsertMeta("og:image:width", "1200", "property");
     upsertMeta("og:image:height", "640", "property");
     upsertMeta("og:image:alt", title, "property");
-    upsertMeta("og:site_name", "Betfair", "property");
+    upsertMeta("og:site_name", "BetfairPlays Live", "property");
     upsertMeta("og:locale", locale, "property");
 
     upsertMeta("twitter:card", "summary_large_image");
@@ -131,8 +131,8 @@ export const Seo = ({
 export const orgJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "Betfair",
-  alternateName: "Betfair Cricket Hub",
+  name: "BetfairPlays Live",
+  alternateName: "BetfairPlays Live Cricket Hub",
   url: SITE_URL,
   logo: `${SITE_URL}/og-default.jpg`,
   sameAs: [],
@@ -142,7 +142,7 @@ export const orgJsonLd = {
 export const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "Betfair",
+  name: "BetfairPlays Live",
   url: SITE_URL,
   inLanguage: "en-IN",
   potentialAction: {
