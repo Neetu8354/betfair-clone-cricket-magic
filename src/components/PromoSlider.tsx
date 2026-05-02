@@ -7,9 +7,27 @@ import { Button } from "@/components/ui/button";
 import { SITE } from "@/lib/site";
 
 const slides = [
-  { img: promo1, title: "IPL Prediction Cup", subtitle: "Predict every match. Climb the leaderboard.", cta: "Play Cricket" },
-  { img: promo2, title: "Royal Casino Night", subtitle: "Cards, dice & big moments — zero risk.", cta: "Enter Casino" },
-  { img: promo3, title: "Daily ₹50,000 Coin Drop", subtitle: "Login daily and grab free virtual coins.", cta: "Claim Now" },
+  {
+    img: promo1,
+    title: "IPL Prediction Cup",
+    subtitle: "Predict every match. Climb the leaderboard.",
+    cta: "Play Cricket",
+    alt: "Betfair IPL 2026 prediction cup banner with cricket trophy and Indian fan crowd",
+  },
+  {
+    img: promo2,
+    title: "Royal Casino Night",
+    subtitle: "Cards, dice & big moments — zero risk.",
+    cta: "Enter Casino",
+    alt: "Betfair royal casino night promo featuring cards, dice and golden chips on a dark table",
+  },
+  {
+    img: promo3,
+    title: "Daily ₹50,000 Coin Drop",
+    subtitle: "Login daily and grab free virtual coins.",
+    cta: "Claim Now",
+    alt: "Daily 50,000 virtual coin drop reward banner for Betfair cricket community members",
+  },
 ];
 
 export const PromoSlider = () => {
@@ -28,7 +46,7 @@ export const PromoSlider = () => {
               key={idx}
               className={`absolute inset-0 transition-opacity duration-700 ${idx === i ? "opacity-100" : "opacity-0"}`}
             >
-              <img src={s.img} alt={s.title} loading="lazy" width={1920} height={822} className="h-full w-full object-cover" />
+              <img src={s.img} alt={s.alt} loading="lazy" width={1920} height={822} className="h-full w-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/40 to-transparent" />
               <div className="absolute inset-0 flex items-center">
                 <div className="container">
