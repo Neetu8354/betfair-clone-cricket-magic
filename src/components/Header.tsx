@@ -1,4 +1,4 @@
-import { Menu, MessageCircle, Bell, Radio, X } from "lucide-react";
+import { Menu, MessageCircle, Bell, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Logo } from "./Logo";
 import { SITE } from "@/lib/site";
