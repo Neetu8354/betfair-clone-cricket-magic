@@ -22,6 +22,7 @@ const CricketId = () => (
       description="Create your free Betfair cricket ID, join the WhatsApp community, post fan predictions on every IPL 2026 match and climb the Betfair leaderboard."
       canonical="/cricket-id"
       keywords="cricket id, betfair cricket id, free cricket id, online cricket id, IPL cricket id, cricket id whatsapp, get cricket id india"
+      image="/og-default.jpg"
       jsonLd={[
         orgJsonLd,
         breadcrumbJsonLd([{ name: "Home", url: "/" }, { name: "Cricket ID", url: "/cricket-id" }]),

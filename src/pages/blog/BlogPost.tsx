@@ -80,11 +80,26 @@ const BlogPost = () => {
 
   const url = `${SITE_URL}/blog/${post.slug}`;
   const author = post.author;
+  // Per-post OG image: use cover if defined, else map by category, else default.
+  const categoryImageMap: Record<string, string> = {
+    Analysis: "/og-stats.jpg",
+    Guide: "/og-stats.jpg",
+    Reviews: "/og-live.jpg",
+    Explainer: "/og-stats.jpg",
+    Players: "/og-players.jpg",
+    Strategy: "/og-stats.jpg",
+    Community: "/og-default.jpg",
+  };
+  const ogImage = post.cover || categoryImageMap[post.category] || "/og-default.jpg";
+  // Special case: IPL-tagged posts get the IPL cover.
+  const isIpl = post.tags.some((t) => t.toLowerCase().includes("ipl"));
+  const finalOg = isIpl ? "/og-ipl-2026.jpg" : ogImage;
   const articleJsonLd: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: post.title,
     description: post.description,
+    image: `${SITE_URL}${finalOg}`,
     datePublished: post.date,
     dateModified: post.updated || post.date,
     author: author
@@ -94,6 +109,7 @@ const BlogPost = () => {
     mainEntityOfPage: url,
     keywords: post.keywords,
     articleSection: post.category,
+    inLanguage: "en-IN",
   };
 
   const faqJsonLd = post.faq?.length
@@ -128,9 +144,11 @@ const BlogPost = () => {
         description={post.description}
         canonical={`/blog/${post.slug}`}
         type="article"
+        image={finalOg}
         keywords={post.keywords}
         publishedTime={post.date}
         modifiedTime={post.updated || post.date}
+        author={author?.name}
         jsonLd={jsonLd}
       />
       <Header />

@@ -22,6 +22,7 @@ const LiveBetting = () => (
       description="Track live cricket scores in under 1 second, watch win-probability shift ball by ball, and join the Betfair community's live fan-prediction threads — totally free."
       canonical="/live-betting"
       keywords="live cricket prediction, live cricket score, ball by ball cricket, live IPL prediction, real time cricket updates, betfair live cricket"
+      image="/og-live.jpg"
       jsonLd={[
         orgJsonLd,
         breadcrumbJsonLd([{ name: "Home", url: "/" }, { name: "Live Predictions", url: "/live-betting" }]),
