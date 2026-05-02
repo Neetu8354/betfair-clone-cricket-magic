@@ -5,7 +5,7 @@ import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { Seo, breadcrumbJsonLd, orgJsonLd } from "@/components/seo/Seo";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Leaderboard } from "@/components/Leaderboard";
-import { Trophy, TrendingUp, TrendingDown, Minus, Info, Bat, Target } from "lucide-react";
+import { Trophy, TrendingUp, TrendingDown, Minus, Info, CircleDot, Target } from "lucide-react";
 import { Link } from "react-router-dom";
 
 type Move = "up" | "down" | "same";
@@ -147,7 +147,7 @@ const Rankings = () => (
       <section className="mt-12 grid gap-6 lg:grid-cols-2">
         <div id="batters" className="scroll-mt-24 rounded-2xl border border-border bg-gradient-card p-5 shadow-card-elevated">
           <div className="mb-4 flex items-center gap-2">
-            <Bat className="h-5 w-5 text-gold" />
+            <CircleDot className="h-5 w-5 text-gold" />
             <h2 className="text-xl font-extrabold text-foreground">Top Run-Scorers</h2>
           </div>
           <ul className="divide-y divide-border">
