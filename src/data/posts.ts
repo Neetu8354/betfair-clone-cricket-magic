@@ -17,10 +17,18 @@ export type Post = {
 };
 
 export type Author = {
+  slug: string;
   name: string;
   role: string;
   bio: string;
   credentials?: string[];
+  expertise?: string[];
+  yearsExperience?: number;
+  location?: string;
+  email?: string;
+  social?: { twitter?: string; linkedin?: string; website?: string };
+  verified?: boolean;
+  longBio?: string;
 };
 
 export type Block =
@@ -36,30 +44,62 @@ export type Block =
 
 const today = "2026-04-20";
 
-const AUTHORS: Record<string, Author> = {
+export const AUTHORS: Record<string, Author> = {
   rohan: {
+    slug: "rohan-mehta",
     name: "Rohan Mehta",
     role: "Lead Cricket Analyst, Betfair Editorial",
     bio: "Rohan has spent eight years building T20 and IPL prediction models, with prior stints at two analytics startups. He writes Betfair's tactical breakdowns and IPL power rankings.",
     credentials: ["8+ yrs cricket analytics", "Built 3 public T20 models", "IPL ball-by-ball researcher"],
+    expertise: ["IPL analytics", "T20 prediction models", "Power rankings", "Ball-by-ball data"],
+    yearsExperience: 8,
+    location: "Mumbai, India",
+    email: "rohan@betfairplays.live",
+    social: { twitter: "https://twitter.com/", linkedin: "https://linkedin.com/" },
+    verified: true,
+    longBio: "Rohan Mehta is the Lead Cricket Analyst at Betfair Editorial. Over the past eight years he has built three public T20 prediction models, contributed ball-by-ball research to two cricket analytics startups, and become a trusted voice for IPL tactical breakdowns. His IPL power rankings are referenced by community fan groups across India and his work focuses on translating raw match data into match-day insights any fan can use.",
   },
   aditi: {
+    slug: "aditi-sharma",
     name: "Aditi Sharma",
     role: "Senior Editor, Stats & Player Coverage",
     bio: "Aditi covers player form, batter and bowler watchlists, and explains advanced cricket stats in plain English for the Betfair community.",
     credentials: ["Ex-sports newsroom editor", "Specialises in T20 player analytics"],
+    expertise: ["Player form", "Batter/bowler watchlists", "Stats explainers", "Editorial standards"],
+    yearsExperience: 10,
+    location: "Bengaluru, India",
+    email: "aditi@betfairplays.live",
+    social: { twitter: "https://twitter.com/", linkedin: "https://linkedin.com/" },
+    verified: true,
+    longBio: "Aditi Sharma is Betfair's Senior Editor for Stats and Player Coverage. With a decade in sports newsrooms, she leads editorial standards for every player profile, watchlist, and stats explainer published on the site. Aditi specialises in turning advanced T20 metrics — true strike rate, bowling impact, phase-wise economy — into plain-English stories that beginners and seasoned fans both enjoy.",
   },
   vikram: {
+    slug: "vikram-iyer",
     name: "Vikram Iyer",
     role: "Strategy Writer, Predictions & Models",
     bio: "Vikram writes Betfair's prediction strategy guides and model explainers, focused on translating Bayesian thinking into match-day workflows fans can actually use.",
     credentials: ["Statistics background", "Author of the Betfair predictions playbook"],
+    expertise: ["Prediction strategy", "Bayesian models", "Match-day workflows", "Stats education"],
+    yearsExperience: 6,
+    location: "Pune, India",
+    email: "vikram@betfairplays.live",
+    social: { twitter: "https://twitter.com/", linkedin: "https://linkedin.com/" },
+    verified: true,
+    longBio: "Vikram Iyer is Betfair's Strategy Writer for Predictions and Models. With a background in statistics and six years writing about applied probability, he authored the Betfair predictions playbook and continues to demystify how Bayesian thinking applies to live cricket. His guides are used by fans, fantasy players and analysts who want a repeatable match-day workflow.",
   },
   sana: {
+    slug: "sana-kapoor",
     name: "Sana Kapoor",
     role: "Community & Glossary Lead",
     bio: "Sana runs the Betfair WhatsApp community and maintains the Betfair cricket glossary so newcomers always feel welcome.",
     credentials: ["Community lead, 25k+ fans", "Glossary maintainer"],
+    expertise: ["Community management", "Cricket glossary", "Onboarding", "Beginner guides"],
+    yearsExperience: 5,
+    location: "Delhi, India",
+    email: "sana@betfairplays.live",
+    social: { twitter: "https://twitter.com/", linkedin: "https://linkedin.com/" },
+    verified: true,
+    longBio: "Sana Kapoor leads community and glossary at Betfair. She runs the Betfair WhatsApp community of more than 25,000 cricket fans and maintains the in-house glossary that introduces newcomers to terms like net run rate, powerplay and impact player. Her mission is to make the Betfair experience welcoming for first-time cricket fans.",
   },
 };
 
