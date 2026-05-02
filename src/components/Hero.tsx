@@ -38,35 +38,35 @@ export const Hero = () => (
       />
     </div>
 
-    <div className="container relative z-10 flex min-h-[88vh] flex-col items-start justify-center py-24">
-      <div className="eyebrow animate-fade-up">
-        <Sparkles className="h-3.5 w-3.5" />
-        Live Stats • Predictions • Community
+    <div className="container relative z-10 flex min-h-[88vh] flex-col items-start justify-center py-20 sm:py-24">
+      <div className="eyebrow animate-fade-up max-w-full">
+        <Sparkles className="h-3.5 w-3.5 shrink-0" />
+        <span className="leading-tight">Live • Predictions • Community</span>
       </div>
 
-      <h1 className="mt-6 max-w-4xl font-display text-5xl font-bold leading-[1.02] tracking-tight text-foreground md:text-7xl lg:text-[88px]">
+      <h1 className="mt-6 max-w-4xl font-display text-[40px] font-bold leading-[1.05] tracking-tight text-foreground sm:text-5xl md:text-7xl lg:text-[88px]">
         Every Ball.{" "}
-        <span className="text-gold-gradient">Every Stat.</span>
-        <br className="hidden sm:block" /> One Premium Hub.
+        <span className="text-gold-gradient">Every Stat.</span>{" "}
+        <span className="block sm:inline">One Premium Hub.</span>
       </h1>
 
-      <p className="mt-6 max-w-xl text-base text-foreground/75 md:text-lg">
+      <p className="mt-5 max-w-xl text-[15px] text-foreground/75 sm:text-base md:text-lg">
         India's premium cricket destination — sub-second live scores, deep IPL
         stats, fan predictions and a 24/7 community, in one beautifully crafted
         dashboard.
       </p>
 
-      <div className="mt-9 flex flex-wrap gap-3">
-        <a href="#matches">
-          <Button variant="hero" size="lg" className="rounded-full px-6">
+      <div className="mt-8 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap">
+        <a href="#matches" className="w-full sm:w-auto">
+          <Button variant="hero" size="lg" className="w-full rounded-full px-6 sm:w-auto">
             <Play className="h-4 w-4" /> Explore matches
           </Button>
         </a>
-        <a href={SITE.whatsapp} target="_blank" rel="noopener noreferrer">
+        <a href={SITE.whatsapp} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
           <Button
             variant="outline"
             size="lg"
-            className="rounded-full border-border-strong bg-background/50 px-6 text-foreground backdrop-blur hover:bg-background/80"
+            className="w-full rounded-full border-border-strong bg-background/50 px-6 text-foreground backdrop-blur hover:bg-background/80 sm:w-auto"
           >
             <MessageCircle className="h-4 w-4" /> Join community
             <ArrowRight className="h-4 w-4 opacity-60" />
@@ -75,17 +75,17 @@ export const Hero = () => (
       </div>
 
       {/* Stats strip */}
-      <div className="mt-14 w-full max-w-3xl">
+      <div className="mt-12 w-full max-w-3xl">
         <div className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-4">
           {stats.map((s) => (
             <div
               key={s.l}
-              className="bg-background-elevated/85 px-5 py-4 backdrop-blur"
+              className="bg-background-elevated/85 px-4 py-3.5 backdrop-blur sm:px-5 sm:py-4"
             >
-              <div className="font-display text-2xl font-bold text-gold md:text-3xl">
+              <div className="font-display text-xl font-bold text-gold sm:text-2xl md:text-3xl">
                 {s.v}
               </div>
-              <div className="mt-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+              <div className="mt-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-muted-foreground">
                 {s.l}
               </div>
             </div>
