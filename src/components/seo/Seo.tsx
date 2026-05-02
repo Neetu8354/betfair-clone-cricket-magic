@@ -80,7 +80,7 @@ export const Seo = ({
     upsertMeta("og:image:width", "1200", "property");
     upsertMeta("og:image:height", "640", "property");
     upsertMeta("og:image:alt", title, "property");
-    upsertMeta("og:site_name", "Betfair", "property");
+    upsertMeta("og:site_name", "BetfairPlays Live", "property");
     upsertMeta("og:locale", locale, "property");
 
     upsertMeta("twitter:card", "summary_large_image");
