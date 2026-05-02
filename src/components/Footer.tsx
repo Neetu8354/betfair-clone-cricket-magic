@@ -6,9 +6,11 @@ import { POSTS } from "@/data/posts";
 const cols: Record<string, { label: string; to?: string; href?: string }[]> = {
   Cricket: [
     { label: "Live Scores", to: "/#matches" },
+    { label: "IPL 2026 Hub", to: "/ipl-2026" },
+    { label: "Live Predictions", to: "/live-betting" },
+    { label: "Cricket ID", to: "/cricket-id" },
     { label: "Match Pulse", to: "/#matches" },
     { label: "Standings", to: "/#standings" },
-    { label: "Fixtures", to: "/#matches" },
   ],
   Stats: [
     { label: "Top Batters", to: "/#stats" },

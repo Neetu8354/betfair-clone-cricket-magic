@@ -6,8 +6,8 @@ import { Link } from "react-router-dom";
 
 const nav: { label: string; href: string; internal?: boolean }[] = [
   { label: "Live Scores", href: "/#matches", internal: true },
+  { label: "IPL 2026", href: "/ipl-2026", internal: true },
   { label: "Stats", href: "/#stats", internal: true },
-  { label: "Standings", href: "/#standings", internal: true },
   { label: "Blog", href: "/blog", internal: true },
   { label: "About", href: "/about", internal: true },
   { label: "Contact", href: "/contact", internal: true },
