@@ -26,6 +26,7 @@ const cols: Record<string, { label: string; to?: string; href?: string }[]> = {
   ],
   Company: [
     { label: "About", to: "/about" },
+    { label: "Editorial Team", to: "/authors" },
     { label: "Contact", to: "/contact" },
     { label: "Community", href: SITE.whatsapp },
     { label: "Cricket Blog", to: "/blog" },
