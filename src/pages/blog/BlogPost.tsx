@@ -5,13 +5,27 @@ import { BottomNav } from "@/components/BottomNav";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { Seo, breadcrumbJsonLd, orgJsonLd, SITE_URL } from "@/components/seo/Seo";
 import { getPost, relatedPosts, POSTS, Block } from "@/data/posts";
-import { Calendar, Clock, ArrowRight } from "lucide-react";
+import { Calendar, Clock, ArrowRight, BadgeCheck } from "lucide-react";
 import { SITE } from "@/lib/site";
 
 const renderBlock = (b: Block, i: number) => {
   switch (b.type) {
     case "p":
       return <p key={i} className="my-4 text-base leading-relaxed text-foreground/90">{b.text}</p>;
+    case "linkp":
+      return (
+        <p key={i} className="my-4 text-base leading-relaxed text-foreground/90">
+          {b.parts.map((part, j) =>
+            typeof part === "string" ? (
+              <span key={j}>{part}</span>
+            ) : (
+              <Link key={j} to={part.href} className="font-semibold text-gold underline-offset-4 hover:underline">
+                {part.text}
+              </Link>
+            ),
+          )}
+        </p>
+      );
     case "h2":
       return <h2 key={i} id={b.id} className="mt-10 mb-3 text-2xl font-extrabold tracking-tight scroll-mt-20">{b.text}</h2>;
     case "h3":
@@ -64,6 +78,7 @@ const BlogPost = () => {
   if (!post) return <Navigate to="/blog" replace />;
 
   const url = `${SITE_URL}/blog/${post.slug}`;
+  const author = post.author;
   const articleJsonLd: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -71,7 +86,9 @@ const BlogPost = () => {
     description: post.description,
     datePublished: post.date,
     dateModified: post.updated || post.date,
-    author: { "@type": "Organization", name: "Betfair Editorial" },
+    author: author
+      ? { "@type": "Person", name: author.name, jobTitle: author.role, worksFor: { "@type": "Organization", name: "Betfair" } }
+      : { "@type": "Organization", name: "Betfair Editorial" },
     publisher: { "@type": "Organization", name: "Betfair", logo: { "@type": "ImageObject", url: `${SITE_URL}/og-default.jpg` } },
     mainEntityOfPage: url,
     keywords: post.keywords,
@@ -134,13 +151,38 @@ const BlogPost = () => {
           <div className="mt-4 flex flex-wrap items-center gap-4 text-xs text-muted-foreground">
             <span className="inline-flex items-center gap-1"><Calendar className="h-3 w-3" /> {new Date(post.date).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" })}</span>
             <span className="inline-flex items-center gap-1"><Clock className="h-3 w-3" /> {post.readMinutes} min read</span>
-            <span>By Betfair Editorial</span>
+            <span>By {author?.name ?? "Betfair Editorial"}{author ? ` · ${author.role}` : ""}</span>
           </div>
         </header>
 
         <article className="prose prose-invert max-w-none">
           {post.content.map(renderBlock)}
         </article>
+
+        {author && (
+          <section aria-label="About the author" className="mt-10 rounded-xl border border-border bg-card p-5">
+            <div className="flex items-start gap-4">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gold text-gold-foreground font-bold">
+                {author.name.split(" ").map((n) => n[0]).join("").slice(0, 2)}
+              </div>
+              <div className="flex-1">
+                <div className="flex items-center gap-2">
+                  <h2 className="text-base font-bold">About {author.name}</h2>
+                  <BadgeCheck className="h-4 w-4 text-gold" aria-hidden="true" />
+                </div>
+                <div className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">{author.role}</div>
+                <p className="mt-2 text-sm text-foreground/85">{author.bio}</p>
+                {author.credentials && author.credentials.length > 0 && (
+                  <ul className="mt-3 flex flex-wrap gap-2">
+                    {author.credentials.map((c) => (
+                      <li key={c} className="rounded-full border border-border px-2.5 py-0.5 text-[11px] text-muted-foreground">{c}</li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* Internal link hub for SEO */}
         <section aria-label="Explore Betfair" className="mt-10 rounded-xl border border-border bg-card p-5">
