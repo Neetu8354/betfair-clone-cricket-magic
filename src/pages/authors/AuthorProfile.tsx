@@ -58,29 +58,30 @@ const AuthorProfile = () => {
         jsonLd={jsonLd}
       />
       <Header />
-      <main className="container max-w-3xl py-8">
+      <main className="container max-w-3xl py-10">
         <Breadcrumbs
           items={[
             { label: "Authors", to: "/authors" },
             { label: author.name },
           ]}
-          className="mb-6"
+          className="mb-8"
         />
 
         {/* Profile header */}
-        <section className="rounded-2xl border border-border bg-card p-6">
-          <div className="flex flex-col items-start gap-5 sm:flex-row">
-            <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-gold text-gold-foreground text-2xl font-bold">
+        <section className="relative overflow-hidden rounded-3xl border border-border bg-gradient-card p-7 shadow-card-elevated md:p-9">
+          <div className="pointer-events-none absolute inset-0 bg-gradient-aurora opacity-80" />
+          <div className="relative flex flex-col items-start gap-5 sm:flex-row">
+            <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-gradient-gold text-2xl font-bold text-gold-foreground shadow-gold ring-4 ring-gold/15">
               {author.name.split(" ").map((n) => n[0]).join("").slice(0, 2)}
             </div>
             <div className="flex-1">
               <div className="flex items-center gap-2">
-                <h1 className="text-2xl font-extrabold tracking-tight md:text-3xl">
+                <h1 className="font-display text-2xl font-bold tracking-tight md:text-4xl">
                   {author.name}
                 </h1>
                 {author.verified && (
                   <span
-                    className="inline-flex items-center gap-1 rounded-full border border-gold/40 bg-gold/10 px-2 py-0.5 text-[11px] font-semibold text-gold"
+                    className="inline-flex items-center gap-1 rounded-full border border-gold/30 bg-gold/10 px-2 py-0.5 text-[11px] font-bold uppercase tracking-wider text-gold"
                     title="Verified Betfair editorial author"
                   >
                     <BadgeCheck className="h-3.5 w-3.5" aria-hidden="true" />
@@ -88,7 +89,7 @@ const AuthorProfile = () => {
                   </span>
                 )}
               </div>
-              <div className="mt-1 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
+              <div className="mt-1 text-[12px] font-bold uppercase tracking-[0.18em] text-muted-foreground">
                 {author.role}
               </div>
 
@@ -142,13 +143,13 @@ const AuthorProfile = () => {
             </div>
           </div>
 
-          <p className="mt-5 text-sm leading-relaxed text-foreground/90">
+          <p className="relative mt-6 text-[15px] leading-relaxed text-foreground/90">
             {author.longBio || author.bio}
           </p>
 
           {author.credentials && author.credentials.length > 0 && (
-            <div className="mt-5">
-              <h2 className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+            <div className="relative mt-6">
+              <h2 className="mb-2 text-[11px] font-bold uppercase tracking-[0.18em] text-muted-foreground">
                 Credentials
               </h2>
               <ul className="flex flex-wrap gap-2">
@@ -165,15 +166,15 @@ const AuthorProfile = () => {
           )}
 
           {author.expertise && author.expertise.length > 0 && (
-            <div className="mt-4">
-              <h2 className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+            <div className="relative mt-4">
+              <h2 className="mb-2 text-[11px] font-bold uppercase tracking-[0.18em] text-muted-foreground">
                 Areas of expertise
               </h2>
               <ul className="flex flex-wrap gap-2">
                 {author.expertise.map((e) => (
                   <li
                     key={e}
-                    className="rounded-full bg-gold/10 px-2.5 py-0.5 text-[11px] font-semibold text-gold"
+                    className="rounded-full border border-gold/30 bg-gold/10 px-2.5 py-0.5 text-[11px] font-semibold text-gold"
                   >
                     {e}
                   </li>
@@ -184,8 +185,8 @@ const AuthorProfile = () => {
         </section>
 
         {/* Articles by author */}
-        <section className="mt-10" aria-labelledby="articles-by">
-          <h2 id="articles-by" className="mb-4 text-xl font-extrabold">
+        <section className="mt-12" aria-labelledby="articles-by">
+          <h2 id="articles-by" className="mb-5 font-display text-2xl font-bold tracking-tight">
             Articles by {author.name.split(" ")[0]}{" "}
             <span className="text-sm font-medium text-muted-foreground">
               ({posts.length})
@@ -202,12 +203,12 @@ const AuthorProfile = () => {
                 <li key={p.slug}>
                   <Link
                     to={`/blog/${p.slug}`}
-                    className="group block rounded-xl border border-border bg-card p-4 transition-colors hover:border-gold/50"
+                    className="group block rounded-2xl border border-border bg-gradient-card p-5 shadow-card-elevated transition-all hover:-translate-y-0.5 hover:border-gold/50 hover:shadow-gold"
                   >
-                    <div className="mb-1 inline-block rounded-full border border-gold/40 bg-gold/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-gold">
+                    <div className="mb-2 inline-flex w-fit rounded-full border border-gold/30 bg-gold/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.2em] text-gold">
                       {p.category}
                     </div>
-                    <h3 className="text-base font-bold leading-snug">
+                    <h3 className="font-display text-base font-bold leading-snug group-hover:text-gold">
                       {p.title}
                     </h3>
                     <p className="mt-1 line-clamp-2 text-sm text-muted-foreground">
