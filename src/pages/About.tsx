@@ -13,7 +13,7 @@ const About = () => {
     "@context": "https://schema.org",
     "@type": "AboutPage",
     name: "About Betfair365 — India's Cricket Stats & Predictions Hub",
-    url: "https://betfair365s.live/about",
+    url: "https://betfairvip.live/about",
     description:
       "Betfair365 is an independent cricket community publishing live scores, deep stats, IPL power rankings and prediction strategy guides for Indian fans.",
     publisher: orgJsonLd,
