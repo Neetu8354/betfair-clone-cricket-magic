@@ -103,7 +103,13 @@ const BlogPost = () => {
     datePublished: post.date,
     dateModified: post.updated || post.date,
     author: author
-      ? { "@type": "Person", name: author.name, jobTitle: author.role, worksFor: { "@type": "Organization", name: "Betfair" } }
+      ? {
+          "@type": "Person",
+          name: author.name,
+          jobTitle: author.role,
+          url: `${SITE_URL}/authors/${author.slug}`,
+          worksFor: { "@type": "Organization", name: "Betfair" },
+        }
       : { "@type": "Organization", name: "Betfair Editorial" },
     publisher: { "@type": "Organization", name: "Betfair", logo: { "@type": "ImageObject", url: `${SITE_URL}/og-default.jpg` } },
     mainEntityOfPage: url,
@@ -170,7 +176,20 @@ const BlogPost = () => {
           <div className="mt-4 flex flex-wrap items-center gap-4 text-xs text-muted-foreground">
             <span className="inline-flex items-center gap-1"><Calendar className="h-3 w-3" /> {new Date(post.date).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" })}</span>
             <span className="inline-flex items-center gap-1"><Clock className="h-3 w-3" /> {post.readMinutes} min read</span>
-            <span>By {author?.name ?? "Betfair Editorial"}{author ? ` · ${author.role}` : ""}</span>
+            <span>
+              By{" "}
+              {author ? (
+                <Link
+                  to={`/authors/${author.slug}`}
+                  className="font-semibold text-foreground underline-offset-4 hover:text-gold hover:underline"
+                >
+                  {author.name}
+                </Link>
+              ) : (
+                "Betfair Editorial"
+              )}
+              {author ? ` · ${author.role}` : ""}
+            </span>
           </div>
         </header>
 
@@ -198,6 +217,13 @@ const BlogPost = () => {
                     ))}
                   </ul>
                 )}
+                <Link
+                  to={`/authors/${author.slug}`}
+                  className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-gold hover:underline"
+                >
+                  View full profile & all articles
+                  <ArrowRight className="h-3 w-3" />
+                </Link>
               </div>
             </div>
           </section>
