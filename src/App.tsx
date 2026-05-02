@@ -13,6 +13,8 @@ import Contact from "./pages/Contact.tsx";
 import CricketId from "./pages/landing/CricketId.tsx";
 import LiveBetting from "./pages/landing/LiveBetting.tsx";
 import Ipl2026 from "./pages/landing/Ipl2026.tsx";
+import AuthorIndex from "./pages/authors/AuthorIndex.tsx";
+import AuthorProfile from "./pages/authors/AuthorProfile.tsx";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +34,8 @@ const App = () => (
           <Route path="/cricket-id" element={<CricketId />} />
           <Route path="/live-betting" element={<LiveBetting />} />
           <Route path="/ipl-2026" element={<Ipl2026 />} />
+          <Route path="/authors" element={<AuthorIndex />} />
+          <Route path="/authors/:slug" element={<AuthorProfile />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
