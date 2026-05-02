@@ -12,10 +12,17 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 const renderBlock = (b: Block, i: number) => {
   switch (b.type) {
     case "p":
-      return <p key={i} className="my-4 text-base leading-relaxed text-foreground/90">{b.text}</p>;
+      return (
+        <p
+          key={i}
+          className="my-5 text-[17px] leading-[1.75] text-foreground/90 first-of-type:first-letter:float-left first-of-type:first-letter:mr-2 first-of-type:first-letter:mt-1 first-of-type:first-letter:font-display first-of-type:first-letter:text-5xl first-of-type:first-letter:font-bold first-of-type:first-letter:text-gold"
+        >
+          {b.text}
+        </p>
+      );
     case "linkp":
       return (
-        <p key={i} className="my-4 text-base leading-relaxed text-foreground/90">
+        <p key={i} className="my-5 text-[17px] leading-[1.75] text-foreground/90">
           {b.parts.map((part, j) =>
             typeof part === "string" ? (
               <span key={j}>{part}</span>
@@ -28,9 +35,17 @@ const renderBlock = (b: Block, i: number) => {
         </p>
       );
     case "h2":
-      return <h2 key={i} id={b.id} className="mt-10 mb-3 text-2xl font-extrabold tracking-tight scroll-mt-20">{b.text}</h2>;
+      return (
+        <h2
+          key={i}
+          id={b.id}
+          className="mt-12 mb-4 font-display text-2xl font-bold tracking-tight scroll-mt-24 md:text-3xl"
+        >
+          {b.text}
+        </h2>
+      );
     case "h3":
-      return <h3 key={i} id={b.id} className="mt-6 mb-2 text-xl font-bold scroll-mt-20">{b.text}</h3>;
+      return <h3 key={i} id={b.id} className="mt-8 mb-2 font-display text-xl font-bold scroll-mt-24">{b.text}</h3>;
     case "ul":
       return (
         <ul key={i} className="my-4 list-disc space-y-2 pl-6 text-foreground/90">
@@ -51,7 +66,11 @@ const renderBlock = (b: Block, i: number) => {
       );
     case "callout":
       return (
-        <aside key={i} className="my-6 rounded-lg border border-gold/40 bg-gold/10 p-4 text-sm text-foreground">
+        <aside
+          key={i}
+          className="my-7 rounded-2xl border border-gold/30 bg-gold/[0.06] p-5 text-sm leading-relaxed text-foreground shadow-card-elevated"
+        >
+          <div className="mb-1 text-[10px] font-bold uppercase tracking-[0.2em] text-gold">Key takeaway</div>
           {b.text}
         </aside>
       );
@@ -158,42 +177,55 @@ const BlogPost = () => {
         jsonLd={jsonLd}
       />
       <Header />
-      <main className="container max-w-3xl py-8">
+      <main className="container max-w-3xl py-10">
         <Breadcrumbs
           items={[
             { label: "Blog", to: "/blog" },
             { label: post.title },
           ]}
-          className="mb-6"
+          className="mb-8"
         />
 
-        <header className="mb-6">
-          <div className="mb-3 inline-block rounded-full border border-gold/40 bg-gold/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-gold">
+        <header className="mb-10">
+          <div className="mb-4 inline-flex items-center gap-1.5 rounded-full border border-gold/30 bg-gold/10 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.2em] text-gold">
             {post.category}
           </div>
-          <h1 className="text-3xl font-extrabold tracking-tight md:text-4xl">{post.title}</h1>
-          <p className="mt-3 text-base text-muted-foreground">{post.description}</p>
-          <div className="mt-4 flex flex-wrap items-center gap-4 text-xs text-muted-foreground">
-            <span className="inline-flex items-center gap-1"><Calendar className="h-3 w-3" /> {new Date(post.date).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" })}</span>
-            <span className="inline-flex items-center gap-1"><Clock className="h-3 w-3" /> {post.readMinutes} min read</span>
-            <span>
-              By{" "}
-              {author ? (
-                <Link
-                  to={`/authors/${author.slug}`}
-                  className="font-semibold text-foreground underline-offset-4 hover:text-gold hover:underline"
-                >
-                  {author.name}
-                </Link>
-              ) : (
-                "Betfair Editorial"
-              )}
-              {author ? ` · ${author.role}` : ""}
+          <h1 className="font-display text-3xl font-bold leading-tight tracking-tight md:text-5xl">
+            {post.title}
+          </h1>
+          <p className="mt-4 text-base text-muted-foreground md:text-lg">
+            {post.description}
+          </p>
+
+          <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-3 border-y border-border/70 py-4">
+            {author ? (
+              <Link
+                to={`/authors/${author.slug}`}
+                className="group flex items-center gap-3"
+              >
+                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-gold text-sm font-bold text-gold-foreground shadow-gold">
+                  {author.name.split(" ").map((n) => n[0]).join("").slice(0, 2)}
+                </span>
+                <span>
+                  <span className="flex items-center gap-1.5 text-sm font-semibold text-foreground group-hover:text-gold">
+                    {author.name}
+                    <BadgeCheck className="h-3.5 w-3.5 text-gold" />
+                  </span>
+                  <span className="text-[11px] text-muted-foreground">{author.role}</span>
+                </span>
+              </Link>
+            ) : (
+              <span className="text-sm font-semibold text-foreground">Betfair Editorial</span>
+            )}
+            <span className="ml-auto flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
+              <span className="inline-flex items-center gap-1"><Calendar className="h-3.5 w-3.5" /> {new Date(post.date).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" })}</span>
+              <span className="opacity-50">•</span>
+              <span className="inline-flex items-center gap-1"><Clock className="h-3.5 w-3.5" /> {post.readMinutes} min read</span>
             </span>
           </div>
         </header>
 
-        <article className="prose prose-invert max-w-none">
+        <article className="max-w-none">
           {post.content.map(renderBlock)}
         </article>
 
@@ -257,26 +289,46 @@ const BlogPost = () => {
         )}
 
         {related.length > 0 && (
-          <section aria-label="Related articles" className="mt-12">
-            <h2 className="mb-4 text-2xl font-extrabold">Related reads</h2>
+          <section aria-label="Related articles" className="mt-14">
+            <h2 className="mb-5 font-display text-2xl font-bold tracking-tight">Related reads</h2>
             <div className="grid gap-4 md:grid-cols-3">
               {related.map((r) => (
-                <Link key={r.slug} to={`/blog/${r.slug}`} className="group rounded-xl border border-border bg-card p-4 transition-all hover:border-gold/60">
-                  <div className="text-[10px] uppercase tracking-wider text-gold">{r.category}</div>
-                  <h3 className="mt-1 text-sm font-bold leading-snug group-hover:text-gold">{r.title}</h3>
-                  <span className="mt-2 inline-flex items-center gap-1 text-xs text-muted-foreground">Read <ArrowRight className="h-3 w-3" /></span>
+                <Link
+                  key={r.slug}
+                  to={`/blog/${r.slug}`}
+                  className="group flex h-full flex-col rounded-2xl border border-border bg-gradient-card p-5 shadow-card-elevated transition-all hover:-translate-y-0.5 hover:border-gold/50 hover:shadow-gold"
+                >
+                  <div className="mb-2 inline-flex w-fit rounded-full border border-gold/30 bg-gold/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.2em] text-gold">
+                    {r.category}
+                  </div>
+                  <h3 className="font-display text-sm font-bold leading-snug group-hover:text-gold">{r.title}</h3>
+                  <span className="mt-auto inline-flex items-center gap-1 pt-3 text-xs font-semibold text-gold">
+                    Read <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
+                  </span>
                 </Link>
               ))}
             </div>
           </section>
         )}
 
-        <div className="mt-12 rounded-xl border border-gold/40 bg-gradient-card p-6 text-center">
-          <h3 className="text-lg font-extrabold">Join the Betfair cricket community</h3>
-          <p className="mt-2 text-sm text-muted-foreground">Live match chats, fan predictions and weekly stats drops.</p>
-          <a href={SITE.whatsapp} target="_blank" rel="noopener noreferrer" className="mt-4 inline-block rounded-md bg-gold px-5 py-2 text-sm font-bold text-gold-foreground hover:opacity-90">
-            Join free
-          </a>
+        <div className="relative mt-14 overflow-hidden rounded-3xl border border-gold/30 bg-gradient-card p-8 text-center shadow-card-elevated">
+          <div className="pointer-events-none absolute inset-0 bg-gradient-aurora opacity-90" />
+          <div className="relative">
+            <h3 className="font-display text-2xl font-bold">
+              Join the <span className="text-gold-gradient">Betfair</span> cricket community
+            </h3>
+            <p className="mx-auto mt-2 max-w-md text-sm text-muted-foreground">
+              Live match chats, fan predictions and weekly stats drops — straight from our editorial team.
+            </p>
+            <a
+              href={SITE.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-5 inline-flex items-center gap-2 rounded-full bg-gradient-gold px-6 py-2.5 text-sm font-bold text-gold-foreground shadow-gold hover:opacity-95"
+            >
+              Join free <ArrowRight className="h-4 w-4" />
+            </a>
+          </div>
         </div>
       </main>
       <Footer />
