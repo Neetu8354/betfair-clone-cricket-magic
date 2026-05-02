@@ -177,42 +177,55 @@ const BlogPost = () => {
         jsonLd={jsonLd}
       />
       <Header />
-      <main className="container max-w-3xl py-8">
+      <main className="container max-w-3xl py-10">
         <Breadcrumbs
           items={[
             { label: "Blog", to: "/blog" },
             { label: post.title },
           ]}
-          className="mb-6"
+          className="mb-8"
         />
 
-        <header className="mb-6">
-          <div className="mb-3 inline-block rounded-full border border-gold/40 bg-gold/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-gold">
+        <header className="mb-10">
+          <div className="mb-4 inline-flex items-center gap-1.5 rounded-full border border-gold/30 bg-gold/10 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.2em] text-gold">
             {post.category}
           </div>
-          <h1 className="text-3xl font-extrabold tracking-tight md:text-4xl">{post.title}</h1>
-          <p className="mt-3 text-base text-muted-foreground">{post.description}</p>
-          <div className="mt-4 flex flex-wrap items-center gap-4 text-xs text-muted-foreground">
-            <span className="inline-flex items-center gap-1"><Calendar className="h-3 w-3" /> {new Date(post.date).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" })}</span>
-            <span className="inline-flex items-center gap-1"><Clock className="h-3 w-3" /> {post.readMinutes} min read</span>
-            <span>
-              By{" "}
-              {author ? (
-                <Link
-                  to={`/authors/${author.slug}`}
-                  className="font-semibold text-foreground underline-offset-4 hover:text-gold hover:underline"
-                >
-                  {author.name}
-                </Link>
-              ) : (
-                "Betfair Editorial"
-              )}
-              {author ? ` · ${author.role}` : ""}
+          <h1 className="font-display text-3xl font-bold leading-tight tracking-tight md:text-5xl">
+            {post.title}
+          </h1>
+          <p className="mt-4 text-base text-muted-foreground md:text-lg">
+            {post.description}
+          </p>
+
+          <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-3 border-y border-border/70 py-4">
+            {author ? (
+              <Link
+                to={`/authors/${author.slug}`}
+                className="group flex items-center gap-3"
+              >
+                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-gold text-sm font-bold text-gold-foreground shadow-gold">
+                  {author.name.split(" ").map((n) => n[0]).join("").slice(0, 2)}
+                </span>
+                <span>
+                  <span className="flex items-center gap-1.5 text-sm font-semibold text-foreground group-hover:text-gold">
+                    {author.name}
+                    <BadgeCheck className="h-3.5 w-3.5 text-gold" />
+                  </span>
+                  <span className="text-[11px] text-muted-foreground">{author.role}</span>
+                </span>
+              </Link>
+            ) : (
+              <span className="text-sm font-semibold text-foreground">Betfair Editorial</span>
+            )}
+            <span className="ml-auto flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
+              <span className="inline-flex items-center gap-1"><Calendar className="h-3.5 w-3.5" /> {new Date(post.date).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" })}</span>
+              <span className="opacity-50">•</span>
+              <span className="inline-flex items-center gap-1"><Clock className="h-3.5 w-3.5" /> {post.readMinutes} min read</span>
             </span>
           </div>
         </header>
 
-        <article className="prose prose-invert max-w-none">
+        <article className="max-w-none">
           {post.content.map(renderBlock)}
         </article>
 
@@ -290,12 +303,24 @@ const BlogPost = () => {
           </section>
         )}
 
-        <div className="mt-12 rounded-xl border border-gold/40 bg-gradient-card p-6 text-center">
-          <h3 className="text-lg font-extrabold">Join the Betfair cricket community</h3>
-          <p className="mt-2 text-sm text-muted-foreground">Live match chats, fan predictions and weekly stats drops.</p>
-          <a href={SITE.whatsapp} target="_blank" rel="noopener noreferrer" className="mt-4 inline-block rounded-md bg-gold px-5 py-2 text-sm font-bold text-gold-foreground hover:opacity-90">
-            Join free
-          </a>
+        <div className="relative mt-14 overflow-hidden rounded-3xl border border-gold/30 bg-gradient-card p-8 text-center shadow-card-elevated">
+          <div className="pointer-events-none absolute inset-0 bg-gradient-aurora opacity-90" />
+          <div className="relative">
+            <h3 className="font-display text-2xl font-bold">
+              Join the <span className="text-gold-gradient">Betfair</span> cricket community
+            </h3>
+            <p className="mx-auto mt-2 max-w-md text-sm text-muted-foreground">
+              Live match chats, fan predictions and weekly stats drops — straight from our editorial team.
+            </p>
+            <a
+              href={SITE.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-5 inline-flex items-center gap-2 rounded-full bg-gradient-gold px-6 py-2.5 text-sm font-bold text-gold-foreground shadow-gold hover:opacity-95"
+            >
+              Join free <ArrowRight className="h-4 w-4" />
+            </a>
+          </div>
         </div>
       </main>
       <Footer />
