@@ -27,4 +27,4 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-Sitemap: https://betfair365s.live/sitemap.xml
+Sitemap: https://betfairvip.live/sitemap.xml
