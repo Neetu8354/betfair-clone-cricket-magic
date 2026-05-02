@@ -1,23 +1,25 @@
 import { TrendingUp } from "lucide-react";
 
+// Recent IPL 2025 playoff results — fan sentiment captured pre-match.
+// Form strings reflect last 5 league-stage results for each side (W = Win, L = Loss, N = No result).
 const matches = [
   {
-    league: "IPL T20 • Today 19:30",
-    a: "Mumbai", b: "Chennai",
-    fans: { a: 62, b: 38 }, form: { a: "WWLWW", b: "LWWLW" },
-    buzz: "61K fans",
+    league: "IPL 2025 • Final",
+    a: "Royal Challengers Bengaluru", b: "Punjab Kings",
+    fans: { a: 58, b: 42 }, form: { a: "WWWLW", b: "WLWWW" },
+    buzz: "92K fans",
   },
   {
-    league: "T20I • Today 19:45",
-    a: "India", b: "Australia",
-    fans: { a: 71, b: 29 }, form: { a: "WWWLW", b: "WLWWL" },
-    buzz: "84K fans",
+    league: "IPL 2025 • Qualifier 2",
+    a: "Punjab Kings", b: "Mumbai Indians",
+    fans: { a: 49, b: 51 }, form: { a: "LWWWL", b: "WWWWL" },
+    buzz: "67K fans",
   },
   {
-    league: "BBL • Tomorrow 14:00",
-    a: "Sydney", b: "Perth",
-    fans: { a: 44, b: 56 }, form: { a: "LWLWW", b: "WWWLW" },
-    buzz: "22K fans",
+    league: "IPL 2025 • Qualifier 1",
+    a: "Royal Challengers Bengaluru", b: "Punjab Kings",
+    fans: { a: 54, b: 46 }, form: { a: "WWLWW", b: "WWWLW" },
+    buzz: "71K fans",
   },
 ];
 

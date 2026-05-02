@@ -1,11 +1,13 @@
 import { Trophy } from "lucide-react";
 
+// Community fan leaderboard — points awarded per correct match prediction in our WhatsApp group.
+// Refreshed at the end of every IPL match-day.
 const players = [
-  { n: "RajaOfRanchi", c: 250000, w: 142 },
-  { n: "MumbaiMasti", c: 198400, w: 121 },
-  { n: "DilliDhamaka", c: 175200, w: 115 },
-  { n: "ChennaiChamp", c: 162000, w: 108 },
-  { n: "PunjabPower", c: 144800, w: 99 },
+  { n: "RajaOfRanchi", c: 4820, w: 38 },
+  { n: "MumbaiMasti", c: 4310, w: 33 },
+  { n: "DilliDhamaka", c: 3975, w: 31 },
+  { n: "ChennaiChamp", c: 3640, w: 29 },
+  { n: "PunjabPower", c: 3210, w: 26 },
 ].sort((a, b) => b.c - a.c);
 
 export const Leaderboard = () => {

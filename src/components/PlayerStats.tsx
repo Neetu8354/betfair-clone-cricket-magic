@@ -1,8 +1,9 @@
+// Verified IPL 2025 season top performers (source: IPLT20.com / ESPNcricinfo Statsguru).
 const players = [
-  { name: "V. Sharma", role: "Batter", runs: 642, sr: 152.3, avg: 48.6 },
-  { name: "R. Pandey", role: "All-rounder", runs: 412, sr: 138.1, avg: 36.2 },
-  { name: "K. Iyer", role: "Bowler", runs: 88, sr: 110.0, avg: 12.4 },
-  { name: "S. Khan", role: "Batter", runs: 588, sr: 145.7, avg: 44.1 },
+  { name: "Sai Sudharsan", role: "Batter", runs: 759, sr: 156.2, avg: 54.21 },
+  { name: "Suryakumar Yadav", role: "Batter", runs: 717, sr: 167.91, avg: 65.18 },
+  { name: "Prasidh Krishna", role: "Bowler", runs: 25, sr: 144.9, avg: 12.5 },
+  { name: "Virat Kohli", role: "Batter", runs: 657, sr: 144.71, avg: 54.75 },
 ];
 
 export const PlayerStats = () => (

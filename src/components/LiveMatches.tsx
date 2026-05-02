@@ -1,11 +1,13 @@
 import { Radio } from "lucide-react";
 import { SITE } from "@/lib/site";
 
+// Recent verified IPL 2025 season fixtures (source: IPLT20.com / ESPNcricinfo).
+// Static demo data — refresh manually when a new season starts.
 const matches = [
-  { league: "IPL T20", a: "Mumbai", b: "Chennai", score: "182/4 (18.2)", live: true },
-  { league: "T20 World Cup", a: "India", b: "Australia", score: "Starts 7:30 PM", live: false },
-  { league: "BBL", a: "Sydney", b: "Perth", score: "156/8 (20)", live: false },
-  { league: "PSL", a: "Karachi", b: "Lahore", score: "94/2 (12.0)", live: true },
+  { league: "IPL 2025 • Final", a: "Royal Challengers Bengaluru", b: "Punjab Kings", score: "RCB won by 6 runs", live: false },
+  { league: "IPL 2025 • Qualifier 2", a: "Punjab Kings", b: "Mumbai Indians", score: "PBKS won by 5 wickets", live: false },
+  { league: "IPL 2025 • Qualifier 1", a: "Royal Challengers Bengaluru", b: "Punjab Kings", score: "RCB won by 8 wickets", live: false },
+  { league: "IPL 2025 • Eliminator", a: "Mumbai Indians", b: "Gujarat Titans", score: "MI won by 20 runs", live: false },
 ];
 
 export const LiveMatches = () => (
