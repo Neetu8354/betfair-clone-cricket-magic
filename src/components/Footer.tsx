@@ -23,8 +23,9 @@ const cols: Record<string, { label: string; to?: string; href?: string }[]> = {
     { label: "Prediction Strategy Guide", to: "/blog/fan-predictions-strategy-guide" },
   ],
   Company: [
+    { label: "About", to: "/about" },
+    { label: "Contact", to: "/contact" },
     { label: "Community", href: SITE.whatsapp },
-    { label: "Contact", href: SITE.whatsapp },
     { label: "Cricket Blog", to: "/blog" },
   ],
 };
