@@ -6,9 +6,10 @@ import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 const nav: { label: string; href: string; internal?: boolean }[] = [
-  { label: "Live Scores", href: "/#matches", internal: true },
+  { label: "Live Scores", href: "/live", internal: true },
   { label: "IPL 2026", href: "/ipl-2026", internal: true },
-  { label: "Stats", href: "/#stats", internal: true },
+  { label: "Stats", href: "/stats", internal: true },
+  { label: "Rankings", href: "/rankings", internal: true },
   { label: "Blog", href: "/blog", internal: true },
   { label: "About", href: "/about", internal: true },
   { label: "Contact", href: "/contact", internal: true },
@@ -83,7 +84,7 @@ export const Header = () => {
         </div>
         <div className="flex items-center gap-2">
           <Link
-            to="/#matches"
+            to="/live"
             aria-label="Live cricket matches"
             className="inline-flex items-center gap-1.5 rounded-full border border-emerald/30 bg-emerald/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-emerald sm:px-3 sm:py-1.5 sm:text-[11px]"
           >
