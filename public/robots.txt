@@ -27,4 +27,4 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-Sitemap: https://sports-casino-clone.lovable.app/sitemap.xml
+Sitemap: https://betfairplays.live/sitemap.xml

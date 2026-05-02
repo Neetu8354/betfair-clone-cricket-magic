@@ -21,7 +21,7 @@ const Contact = () => {
     "@context": "https://schema.org",
     "@type": "ContactPage",
     name: "Contact Betfair Cricket Hub",
-    url: "https://sports-casino-clone.lovable.app/contact",
+    url: "https://betfairplays.live/contact",
     description: "Get in touch with the Betfair editorial team for cricket coverage, partnerships, corrections or community questions.",
     publisher: orgJsonLd,
   };
@@ -39,7 +39,7 @@ const Contact = () => {
         "@type": "ContactPoint",
         contactType: "editorial",
         availableLanguage: ["English"],
-        email: "editors@betfair-cricket.app",
+        email: "editors@betfairplays.live",
       },
     ],
   };
@@ -81,7 +81,7 @@ const Contact = () => {
         <section className="mx-auto mt-10 grid max-w-5xl gap-4 md:grid-cols-3">
           {[
             { icon: MessageCircle, title: "WhatsApp community", text: "Fastest way to reach us. Match-day chatter, predictions and live support.", href: SITE.whatsapp, cta: "Open WhatsApp" },
-            { icon: Mail, title: "Editorial desk", text: "Pitches, corrections and partnership enquiries.", href: "mailto:editors@betfair-cricket.app", cta: "editors@betfair-cricket.app" },
+            { icon: Mail, title: "Editorial desk", text: "Pitches, corrections and partnership enquiries.", href: "mailto:editors@betfairplays.live", cta: "editors@betfairplays.live" },
             { icon: Clock, title: "Response time", text: "WhatsApp: same day. Email: within 1–2 working days, IST business hours." },
           ].map((c) => (
             <div key={c.title} className="rounded-xl border border-border bg-card p-6">
