@@ -41,7 +41,7 @@ const AUTHORS: Record<string, Author> = {
     name: "Rohan Mehta",
     role: "Lead Cricket Analyst, Betfair Editorial",
     bio: "Rohan has spent eight years building T20 and IPL prediction models, with prior stints at two analytics startups. He writes Betfair's tactical breakdowns and IPL power rankings.",
-    credentials: ["8+ yrs cricket analytics", "Built 3 public T20 models", "IPL ball-by-bythe-ball researcher"],
+    credentials: ["8+ yrs cricket analytics", "Built 3 public T20 models", "IPL ball-by-ball researcher"],
   },
   aditi: {
     name: "Aditi Sharma",
