@@ -47,7 +47,10 @@ async function main() {
   const { port } = server.address();
   const baseUrl = `http://127.0.0.1:${port}`;
 
-  const browser = await puppeteer.launch({ headless: "new" });
+  const browser = await puppeteer.launch({
+    headless: "new",
+    args: ["--no-sandbox", "--disable-setuid-sandbox", "--disable-dev-shm-usage"],
+  });
 
   try {
     for (const route of routes) {
@@ -73,4 +76,9 @@ async function main() {
   }
 }
 
-main();
+main().catch((err) => {
+  // Never fail the deploy because of prerendering — worst case the site
+  // just falls back to client-side rendering, which is the pre-existing behavior.
+  console.error("[prerender] skipped due to error:", err.message);
+  process.exit(0);
+});
