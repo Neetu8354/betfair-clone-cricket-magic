@@ -11,7 +11,8 @@ import { existsSync } from "node:fs";
 import path from "node:path";
 import http from "node:http";
 import handler from "serve-handler";
-import puppeteer from "puppeteer";
+import puppeteer from "puppeteer-core";
+import chromium from "@sparticuz/chromium";
 
 const ROOT = path.resolve(new URL(".", import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, "$1"));
 const projectRoot = path.resolve(ROOT, "..");
@@ -47,9 +48,11 @@ async function main() {
   const { port } = server.address();
   const baseUrl = `http://127.0.0.1:${port}`;
 
+  const executablePath = await chromium.executablePath();
   const browser = await puppeteer.launch({
-    headless: "new",
-    args: ["--no-sandbox", "--disable-setuid-sandbox", "--disable-dev-shm-usage"],
+    executablePath,
+    headless: chromium.headless,
+    args: chromium.args,
   });
 
   try {
