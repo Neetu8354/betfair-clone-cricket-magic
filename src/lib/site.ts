@@ -1,6 +1,6 @@
 export const SITE = {
   name: "Betfair365",
-  tagline: "India's Premium Cricket Stats & Predictions Hub",
+  tagline: "India's Premium Cricket Betting Odds, Exchange & Predictions Hub",
   whatsapp: "https://wa.link/reddyanna_",
   currency: "₹",
 };
