@@ -1,4 +1,4 @@
-import { Link, useParams, Navigate } from "react-router-dom";
+﻿import { Link, useParams, Navigate } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { BottomNav } from "@/components/BottomNav";
@@ -127,10 +127,10 @@ const BlogPost = () => {
           name: author.name,
           jobTitle: author.role,
           url: `${SITE_URL}/authors/${author.slug}`,
-          worksFor: { "@type": "Organization", name: "Betfair365" },
+          worksFor: { "@type": "Organization", name: "BetfairVIP" },
         }
-      : { "@type": "Organization", name: "Betfair365 Editorial" },
-    publisher: { "@type": "Organization", name: "Betfair365", logo: { "@type": "ImageObject", url: `${SITE_URL}/og-default.jpg` } },
+      : { "@type": "Organization", name: "BetfairVIP Editorial" },
+    publisher: { "@type": "Organization", name: "BetfairVIP", logo: { "@type": "ImageObject", url: `${SITE_URL}/og-default.jpg` } },
     mainEntityOfPage: url,
     keywords: post.keywords,
     articleSection: post.category,
@@ -165,7 +165,7 @@ const BlogPost = () => {
   return (
     <div className="min-h-screen bg-background pb-16 lg:pb-0">
       <Seo
-        title={`${post.title} | Betfair365`}
+        title={`${post.title} | BetfairVIP`}
         description={post.description}
         canonical={`/blog/${post.slug}`}
         type="article"
@@ -215,7 +215,7 @@ const BlogPost = () => {
                 </span>
               </Link>
             ) : (
-              <span className="text-sm font-semibold text-foreground">Betfair365 Editorial</span>
+              <span className="text-sm font-semibold text-foreground">BetfairVIP Editorial</span>
             )}
             <span className="ml-auto flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
               <span className="inline-flex items-center gap-1"><Calendar className="h-3.5 w-3.5" /> {new Date(post.date).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" })}</span>
@@ -262,7 +262,7 @@ const BlogPost = () => {
         )}
 
         {/* Internal link hub for SEO */}
-        <section aria-label="Explore Betfair365" className="mt-10 rounded-xl border border-border bg-card p-5">
+        <section aria-label="Explore BetfairVIP" className="mt-10 rounded-xl border border-border bg-card p-5">
           <h2 className="mb-3 text-lg font-bold">Keep exploring</h2>
           <ul className="grid gap-2 text-sm sm:grid-cols-2">
             <li><Link to="/" className="text-foreground hover:text-gold">→ Live cricket scores hub</Link></li>
@@ -315,7 +315,7 @@ const BlogPost = () => {
           <div className="pointer-events-none absolute inset-0 bg-gradient-aurora opacity-90" />
           <div className="relative">
             <h3 className="font-display text-2xl font-bold">
-              Join the <span className="text-gold-gradient">Betfair365</span> cricket community
+              Join the <span className="text-gold-gradient">BetfairVIP</span> cricket community
             </h3>
             <p className="mx-auto mt-2 max-w-md text-sm text-muted-foreground">
               Live match chats, fan predictions and weekly stats drops — straight from our editorial team.

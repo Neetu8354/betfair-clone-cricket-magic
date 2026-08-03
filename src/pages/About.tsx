@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+﻿import { Link } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { BottomNav } from "@/components/BottomNav";
@@ -12,10 +12,10 @@ const About = () => {
   const aboutJsonLd = {
     "@context": "https://schema.org",
     "@type": "AboutPage",
-    name: "About Betfair365 — India's Cricket Stats & Predictions Hub",
+    name: "About BetfairVIP — India's Cricket Stats & Predictions Hub",
     url: "https://betfairvip.live/about",
     description:
-      "Betfair365 is an independent cricket community publishing live scores, deep stats, IPL power rankings and prediction strategy guides for Indian fans.",
+      "BetfairVIP is an independent cricket community publishing live scores, deep stats, IPL power rankings and prediction strategy guides for Indian fans.",
     publisher: orgJsonLd,
   };
 
@@ -25,18 +25,18 @@ const About = () => {
     mainEntity: [
       {
         "@type": "Question",
-        name: "What is Betfair365 Cricket Hub?",
+        name: "What is BetfairVIP Cricket Hub?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Betfair365 is an independent cricket stats, predictions and community platform for Indian fans, covering IPL, T20Is, ODIs and Tests with live scores, player analytics and editorial deep-dives.",
+          text: "BetfairVIP is an independent cricket stats, predictions and community platform for Indian fans, covering IPL, T20Is, ODIs and Tests with live scores, player analytics and editorial deep-dives.",
         },
       },
       {
         "@type": "Question",
-        name: "Is Betfair365 affiliated with any league or operator?",
+        name: "Is BetfairVIP affiliated with any league or operator?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "No. Betfair365 Cricket Hub is a fan-built editorial platform and is not affiliated with any cricket board, league, broadcaster or betting operator.",
+          text: "No. BetfairVIP Cricket Hub is a fan-built editorial platform and is not affiliated with any cricket board, league, broadcaster or betting operator.",
         },
       },
       {
@@ -53,8 +53,8 @@ const About = () => {
   return (
     <div className="min-h-screen bg-background pb-16 lg:pb-0">
       <Seo
-        title="About Betfair365 — India's Cricket Stats & Predictions Hub"
-        description="Meet the team behind Betfair365 Cricket Hub. Independent cricket stats, IPL power rankings, prediction strategy guides and a fan-first community for Indian cricket lovers."
+        title="About BetfairVIP — India's Cricket Stats & Predictions Hub"
+        description="Meet the team behind BetfairVIP Cricket Hub. Independent cricket stats, IPL power rankings, prediction strategy guides and a fan-first community for Indian cricket lovers."
         canonical="/about"
         keywords="about betfair, cricket stats team, IPL analysis india, cricket prediction experts, fan cricket community"
         jsonLd={[
@@ -73,7 +73,7 @@ const About = () => {
 
         <header className="mx-auto max-w-3xl text-center">
           <p className="mb-3 inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-gold">
-            <Sparkles className="h-3 w-3" /> About Betfair365
+            <Sparkles className="h-3 w-3" /> About BetfairVIP
           </p>
           <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl">
             Cricket, decoded — by fans, for fans.
@@ -101,7 +101,7 @@ const About = () => {
         <section className="mx-auto mt-14 max-w-3xl space-y-6 text-base leading-relaxed text-muted-foreground">
           <h2 className="text-2xl font-bold text-foreground">Our mission</h2>
           <p>
-            We started Betfair365 Cricket Hub because Indian cricket coverage is either too shallow (score updates) or too
+            We started BetfairVIP Cricket Hub because Indian cricket coverage is either too shallow (score updates) or too
             walled-off (paid analyst desks). We sit in the middle: free, fast, and rigorous. Whether you're prepping for
             an <Link to="/blog/ipl-2026-team-power-rankings" className="text-gold underline-offset-4 hover:underline">IPL 2026 matchup</Link>{" "}
             or learning to <Link to="/blog/how-to-read-cricket-stats-like-an-analyst" className="text-gold underline-offset-4 hover:underline">read cricket stats like an analyst</Link>,
@@ -116,7 +116,7 @@ const About = () => {
           </ul>
           <h2 className="text-2xl font-bold text-foreground">Editorial standards</h2>
           <p>
-            Every article is written or reviewed by the Betfair365 Editorial desk, fact-checked against publicly available
+            Every article is written or reviewed by the BetfairVIP Editorial desk, fact-checked against publicly available
             ball-by-ball data, and updated when results materially change. We disclose model assumptions and we never
             present opinion as certainty.
           </p>

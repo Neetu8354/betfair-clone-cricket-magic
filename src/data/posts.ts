@@ -1,4 +1,4 @@
-export type Post = {
+﻿export type Post = {
   slug: string;
   title: string;
   description: string;
@@ -48,8 +48,8 @@ export const AUTHORS: Record<string, Author> = {
   rohan: {
     slug: "rohan-mehta",
     name: "Rohan Mehta",
-    role: "Lead Cricket Analyst, Betfair365 Editorial",
-    bio: "Rohan has spent eight years building T20 and IPL prediction models, with prior stints at two analytics startups. He writes Betfair365's tactical breakdowns and IPL power rankings.",
+    role: "Lead Cricket Analyst, BetfairVIP Editorial",
+    bio: "Rohan has spent eight years building T20 and IPL prediction models, with prior stints at two analytics startups. He writes BetfairVIP's tactical breakdowns and IPL power rankings.",
     credentials: ["8+ yrs cricket analytics", "Built 3 public T20 models", "IPL ball-by-ball researcher"],
     expertise: ["IPL analytics", "T20 prediction models", "Power rankings", "Ball-by-ball data"],
     yearsExperience: 8,
@@ -57,13 +57,13 @@ export const AUTHORS: Record<string, Author> = {
     email: "rohan@betfairvip.live",
     social: { twitter: "https://twitter.com/", linkedin: "https://linkedin.com/" },
     verified: true,
-    longBio: "Rohan Mehta is the Lead Cricket Analyst at Betfair365 Editorial. Over the past eight years he has built three public T20 prediction models, contributed ball-by-ball research to two cricket analytics startups, and become a trusted voice for IPL tactical breakdowns. His IPL power rankings are referenced by community fan groups across India and his work focuses on translating raw match data into match-day insights any fan can use.",
+    longBio: "Rohan Mehta is the Lead Cricket Analyst at BetfairVIP Editorial. Over the past eight years he has built three public T20 prediction models, contributed ball-by-ball research to two cricket analytics startups, and become a trusted voice for IPL tactical breakdowns. His IPL power rankings are referenced by community fan groups across India and his work focuses on translating raw match data into match-day insights any fan can use.",
   },
   aditi: {
     slug: "aditi-sharma",
     name: "Aditi Sharma",
     role: "Senior Editor, Stats & Player Coverage",
-    bio: "Aditi covers player form, batter and bowler watchlists, and explains advanced cricket stats in plain English for the Betfair365 community.",
+    bio: "Aditi covers player form, batter and bowler watchlists, and explains advanced cricket stats in plain English for the BetfairVIP community.",
     credentials: ["Ex-sports newsroom editor", "Specialises in T20 player analytics"],
     expertise: ["Player form", "Batter/bowler watchlists", "Stats explainers", "Editorial standards"],
     yearsExperience: 10,
@@ -71,27 +71,27 @@ export const AUTHORS: Record<string, Author> = {
     email: "aditi@betfairvip.live",
     social: { twitter: "https://twitter.com/", linkedin: "https://linkedin.com/" },
     verified: true,
-    longBio: "Aditi Sharma is Betfair365's Senior Editor for Stats and Player Coverage. With a decade in sports newsrooms, she leads editorial standards for every player profile, watchlist, and stats explainer published on the site. Aditi specialises in turning advanced T20 metrics — true strike rate, bowling impact, phase-wise economy — into plain-English stories that beginners and seasoned fans both enjoy.",
+    longBio: "Aditi Sharma is BetfairVIP's Senior Editor for Stats and Player Coverage. With a decade in sports newsrooms, she leads editorial standards for every player profile, watchlist, and stats explainer published on the site. Aditi specialises in turning advanced T20 metrics — true strike rate, bowling impact, phase-wise economy — into plain-English stories that beginners and seasoned fans both enjoy.",
   },
   vikram: {
     slug: "vikram-iyer",
     name: "Vikram Iyer",
     role: "Strategy Writer, Predictions & Models",
-    bio: "Vikram writes Betfair365's prediction strategy guides and model explainers, focused on translating Bayesian thinking into match-day workflows fans can actually use.",
-    credentials: ["Statistics background", "Author of the Betfair365 predictions playbook"],
+    bio: "Vikram writes BetfairVIP's prediction strategy guides and model explainers, focused on translating Bayesian thinking into match-day workflows fans can actually use.",
+    credentials: ["Statistics background", "Author of the BetfairVIP predictions playbook"],
     expertise: ["Prediction strategy", "Bayesian models", "Match-day workflows", "Stats education"],
     yearsExperience: 6,
     location: "Pune, India",
     email: "vikram@betfairvip.live",
     social: { twitter: "https://twitter.com/", linkedin: "https://linkedin.com/" },
     verified: true,
-    longBio: "Vikram Iyer is Betfair365's Strategy Writer for Predictions and Models. With a background in statistics and six years writing about applied probability, he authored the Betfair365 predictions playbook and continues to demystify how Bayesian thinking applies to live cricket. His guides are used by fans, fantasy players and analysts who want a repeatable match-day workflow.",
+    longBio: "Vikram Iyer is BetfairVIP's Strategy Writer for Predictions and Models. With a background in statistics and six years writing about applied probability, he authored the BetfairVIP predictions playbook and continues to demystify how Bayesian thinking applies to live cricket. His guides are used by fans, fantasy players and analysts who want a repeatable match-day workflow.",
   },
   sana: {
     slug: "sana-kapoor",
     name: "Sana Kapoor",
     role: "Community & Glossary Lead",
-    bio: "Sana runs the Betfair365 WhatsApp community and maintains the Betfair365 cricket glossary so newcomers always feel welcome.",
+    bio: "Sana runs the BetfairVIP WhatsApp community and maintains the BetfairVIP cricket glossary so newcomers always feel welcome.",
     credentials: ["Community lead, 25k+ fans", "Glossary maintainer"],
     expertise: ["Community management", "Cricket glossary", "Onboarding", "Beginner guides"],
     yearsExperience: 5,
@@ -99,7 +99,7 @@ export const AUTHORS: Record<string, Author> = {
     email: "sana@betfairvip.live",
     social: { twitter: "https://twitter.com/", linkedin: "https://linkedin.com/" },
     verified: true,
-    longBio: "Sana Kapoor leads community and glossary at Betfair365. She runs the Betfair365 WhatsApp community of more than 25,000 cricket fans and maintains the in-house glossary that introduces newcomers to terms like net run rate, powerplay and impact player. Her mission is to make the Betfair365 experience welcoming for first-time cricket fans.",
+    longBio: "Sana Kapoor leads community and glossary at BetfairVIP. She runs the BetfairVIP WhatsApp community of more than 25,000 cricket fans and maintains the in-house glossary that introduces newcomers to terms like net run rate, powerplay and impact player. Her mission is to make the BetfairVIP experience welcoming for first-time cricket fans.",
   },
 };
 
@@ -140,7 +140,7 @@ export const POSTS: Post[] = [
       { type: "h2", text: "C-tier: rebuilders", id: "c-tier" },
       { type: "p", text: "Punjab Kings and Sunrisers Hyderabad enter 2026 with the youngest squads. Long-term upside is real, but the analytics suggest a ninth or tenth place finish unless their captain finds 600+ runs at SR 150." },
       { type: "h2", text: "What this means for fan predictions", id: "predictions" },
-      { type: "p", text: "If you're entering Betfair365 fan predictions, the model favours an MI vs GT final with RCB as the dark horse. Track the live updates on our Betfair365 live cricket scores hub to see whether the numbers hold up after Week 4 — that's historically the inflection point." },
+      { type: "p", text: "If you're entering BetfairVIP fan predictions, the model favours an MI vs GT final with RCB as the dark horse. Track the live updates on our BetfairVIP live cricket scores hub to see whether the numbers hold up after Week 4 — that's historically the inflection point." },
       { type: "linkp", parts: ["For deeper context on the metrics behind these rankings, read our explainer on ", { text: "how to read cricket stats like an analyst", href: "/blog/how-to-read-cricket-stats-like-an-analyst" }, " and pair it with our ", { text: "top 10 batters to watch in 2026", href: "/blog/top-10-batters-to-watch-2026" }, " for squad-level reads."] },
     ],
   },
@@ -176,7 +176,7 @@ export const POSTS: Post[] = [
       { type: "p", text: "WPA measures how much each ball changed the win probability. It's the closest cricket has to baseball's WAR — perfect for ranking impact players." },
       { type: "h2", text: "7. Match-up matrices", id: "match-ups" },
       { type: "p", text: "Right-arm pace vs left-hand top-order, leg-spin vs middle order — match-ups beat one-size-fits-all averages every time." },
-      { type: "p", text: "Apply these on our live Betfair365 stats dashboard and you'll spot value the casual fan misses." },
+      { type: "p", text: "Apply these on our live BetfairVIP stats dashboard and you'll spot value the casual fan misses." },
       { type: "linkp", parts: ["These metrics power our ", { text: "IPL 2026 power rankings", href: "/blog/ipl-2026-team-power-rankings" }, " and our ", { text: "cricket prediction models explainer", href: "/blog/cricket-prediction-models-explained" }, " — read both to see the math in action."] },
     ],
   },
@@ -192,7 +192,7 @@ export const POSTS: Post[] = [
     keywords: "best live cricket score app 2026, live cricket scores India, fastest cricket score app, real time cricket updates",
     author: AUTHORS.rohan,
     faq: [
-      { q: "What is the fastest live cricket score source in 2026?", a: "Direct ball-by-ball APIs feeding our Betfair365 scoreboard update in under 800ms from the venue — faster than most TV broadcasts which carry 5–8 second delays." },
+      { q: "What is the fastest live cricket score source in 2026?", a: "Direct ball-by-ball APIs feeding our BetfairVIP scoreboard update in under 800ms from the venue — faster than most TV broadcasts which carry 5–8 second delays." },
       { q: "Are free live cricket score apps accurate?", a: "Most free apps mirror official scoring data but lag 3–10 seconds and lose ball-by-ball detail. For analytics-grade accuracy, use a dashboard with raw ball events." },
     ],
     content: [
@@ -200,7 +200,7 @@ export const POSTS: Post[] = [
       { type: "h2", text: "How we tested", id: "method" },
       { type: "p", text: "We measured time-to-update from real-venue events, cross-checked ball-by-ball deltas against official scorecards, and counted intrusive ad units per pageview." },
       { type: "h2", text: "Top picks", id: "winners" },
-      { type: "p", text: "Lightweight web dashboards beat native apps on speed almost universally. The Betfair365 live scores hub averaged 0.8s update latency vs a 4.2s industry median." },
+      { type: "p", text: "Lightweight web dashboards beat native apps on speed almost universally. The BetfairVIP live scores hub averaged 0.8s update latency vs a 4.2s industry median." },
       { type: "linkp", parts: ["Pair a fast scoreboard with our ", { text: "fan predictions strategy guide", href: "/blog/fan-predictions-strategy-guide" }, " and our ", { text: "venues that favour chasing study", href: "/blog/venues-that-favour-chasing" }, " to turn live data into smarter calls."] },
     ],
   },
@@ -287,7 +287,7 @@ export const POSTS: Post[] = [
   {
     slug: "fan-predictions-strategy-guide",
     title: "The Fan Predictions Strategy Guide (Free, Ethical, Data-Backed)",
-    description: "How to climb the Betfair365 fan predictions leaderboard using public data, smart staking and a simple Bayesian update rule.",
+    description: "How to climb the BetfairVIP fan predictions leaderboard using public data, smart staking and a simple Bayesian update rule.",
     excerpt: "A free, repeatable framework for making smarter cricket predictions — no insider info required.",
     date: today,
     readMinutes: 10,
@@ -327,7 +327,7 @@ export const POSTS: Post[] = [
   {
     slug: "what-makes-a-cricket-community-great",
     title: "What Makes a Cricket Community Great (And Why It Matters)",
-    description: "The behavioural science behind sticky cricket fan communities — and how Betfair365 built a 24/7 hub fans actually return to.",
+    description: "The behavioural science behind sticky cricket fan communities — and how BetfairVIP built a 24/7 hub fans actually return to.",
     excerpt: "The behavioural science of sticky fan communities — and how to spot a great cricket community from a fake one.",
     date: today,
     readMinutes: 7,

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+﻿import { Link } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { BottomNav } from "@/components/BottomNav";
@@ -9,17 +9,17 @@ import { Activity, Zap, BarChart3, Radar, MessageCircle, TrendingUp } from "luci
 import { SITE } from "@/lib/site";
 
 const FAQS = [
-  { q: "What is live cricket prediction on Betfair365?", a: "Live cricket prediction is the Betfair365 community feature where fans submit ball-by-ball and over-by-over forecasts during a match. It's free, social, and ranked on a public leaderboard." },
-  { q: "How fast is the Betfair365 live scoreboard?", a: "Our live cricket scoreboard updates in roughly 0.8 seconds from the venue — faster than most TV broadcasts which run a 5–8 second delay." },
-  { q: "Do I need any money to play live predictions?", a: "No. Betfair365 fan predictions are 100% free. We use virtual coins and a community leaderboard, never real-money wagering." },
+  { q: "What is live cricket prediction on BetfairVIP?", a: "Live cricket prediction is the BetfairVIP community feature where fans submit ball-by-ball and over-by-over forecasts during a match. It's free, social, and ranked on a public leaderboard." },
+  { q: "How fast is the BetfairVIP live scoreboard?", a: "Our live cricket scoreboard updates in roughly 0.8 seconds from the venue — faster than most TV broadcasts which run a 5–8 second delay." },
+  { q: "Do I need any money to play live predictions?", a: "No. BetfairVIP fan predictions are 100% free. We use virtual coins and a community leaderboard, never real-money wagering." },
   { q: "Which matches are covered in live mode?", a: "Every IPL, T20I, ODI, Test and major domestic T20 fixture gets live coverage with ball-by-ball pulse, win-probability shifts and fan prediction threads." },
 ];
 
 const LiveBetting = () => (
   <div className="min-h-screen bg-background pb-16 lg:pb-0">
     <Seo
-      title="Live Cricket Predictions — Real-Time Match Pulse | Betfair365"
-      description="Track live cricket scores in under 1 second, watch win-probability shift ball by ball, and join the Betfair365 community's live fan-prediction threads — totally free."
+      title="Live Cricket Predictions — Real-Time Match Pulse | BetfairVIP"
+      description="Track live cricket scores in under 1 second, watch win-probability shift ball by ball, and join the BetfairVIP community's live fan-prediction threads — totally free."
       canonical="/live-betting"
       keywords="live cricket prediction, live cricket score, ball by ball cricket, live IPL prediction, real time cricket updates, betfair live cricket"
       image="/og-live.jpg"
@@ -68,8 +68,8 @@ const LiveBetting = () => (
       <section className="mx-auto mt-14 max-w-3xl space-y-4 text-base leading-relaxed text-muted-foreground">
         <h2 className="text-2xl font-bold text-foreground">How live cricket predictions work</h2>
         <p>
-          Every Betfair365 live match gets a real-time scoreboard, a ball-by-ball pulse and a fan-prediction thread.
-          The Betfair365 model rebuilds after each over — gaining roughly 12–15 points of accuracy versus its
+          Every BetfairVIP live match gets a real-time scoreboard, a ball-by-ball pulse and a fan-prediction thread.
+          The BetfairVIP model rebuilds after each over — gaining roughly 12–15 points of accuracy versus its
           pre-match number, exactly as we explain in our{" "}
           <Link to="/blog/cricket-prediction-models-explained" className="text-gold underline-offset-4 hover:underline">cricket prediction models guide</Link>.
         </p>
@@ -80,7 +80,7 @@ const LiveBetting = () => (
           <Link to="/blog/fan-predictions-strategy-guide" className="text-gold underline-offset-4 hover:underline">fan predictions strategy guide</Link>{" "}
           and you'll spot value most casual fans miss.
         </p>
-        <h2 className="text-2xl font-bold text-foreground">What makes Betfair365 live mode different</h2>
+        <h2 className="text-2xl font-bold text-foreground">What makes BetfairVIP live mode different</h2>
         <ul className="list-disc space-y-2 pl-6">
           <li>Sub-second scoreboard updates from venue feeds, not aggregator delays.</li>
           <li>Live win-probability and projected first-innings totals.</li>
@@ -92,7 +92,7 @@ const LiveBetting = () => (
         <div className="flex items-start gap-3">
           <TrendingUp className="h-5 w-5 text-gold" />
           <div>
-            <h2 className="font-bold">Pro tip from the Betfair365 desk</h2>
+            <h2 className="font-bold">Pro tip from the BetfairVIP desk</h2>
             <p className="mt-1 text-sm text-muted-foreground">
               The biggest live-prediction edge comes after the powerplay — that's when win-probability becomes
               meaningfully more reliable. Wait, then call.

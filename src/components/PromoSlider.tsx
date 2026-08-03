@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+﻿import { useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import promo1 from "@/assets/promo-1.jpg";
 import promo2 from "@/assets/promo-2.jpg";
@@ -12,21 +12,21 @@ const slides = [
     title: "IPL Prediction Cup",
     subtitle: "Predict every match. Climb the leaderboard.",
     cta: "Play Cricket",
-    alt: "Betfair365 IPL 2026 prediction cup banner with cricket trophy and Indian fan crowd",
+    alt: "BetfairVIP IPL 2026 prediction cup banner with cricket trophy and Indian fan crowd",
   },
   {
     img: promo2,
     title: "Royal Casino Night",
     subtitle: "Cards, dice & big moments — zero risk.",
     cta: "Enter Casino",
-    alt: "Betfair365 royal casino night promo featuring cards, dice and golden chips on a dark table",
+    alt: "BetfairVIP royal casino night promo featuring cards, dice and golden chips on a dark table",
   },
   {
     img: promo3,
     title: "Daily ₹50,000 Coin Drop",
     subtitle: "Login daily and grab free virtual coins.",
     cta: "Claim Now",
-    alt: "Daily 50,000 virtual coin drop reward banner for Betfair365 cricket community members",
+    alt: "Daily 50,000 virtual coin drop reward banner for BetfairVIP cricket community members",
   },
 ];
 

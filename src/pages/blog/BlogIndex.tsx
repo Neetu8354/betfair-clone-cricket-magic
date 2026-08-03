@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+﻿import { Link } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { BottomNav } from "@/components/BottomNav";
@@ -23,7 +23,7 @@ const BlogIndex = () => {
   return (
     <div className="min-h-screen bg-background pb-16 lg:pb-0">
       <Seo
-        title="Cricket Blog — Stats, Predictions & Player Analysis | Betfair365"
+        title="Cricket Blog — Stats, Predictions & Player Analysis | BetfairVIP"
         description="Deep cricket analysis, IPL 2026 power rankings, prediction strategy guides, player watchlists and the most-complete cricket glossary on the web."
         canonical="/blog"
         keywords="cricket blog, IPL 2026 analysis, cricket stats articles, cricket predictions, player rankings"
@@ -46,7 +46,7 @@ const BlogIndex = () => {
           <div className="relative">
             <span className="eyebrow"><Newspaper className="h-3 w-3" /> Cricket Editorial</span>
             <h1 className="mt-4 max-w-3xl font-display text-4xl font-bold leading-tight tracking-tight md:text-6xl">
-              The <span className="text-gold-gradient">Betfair365</span> Cricket Blog
+              The <span className="text-gold-gradient">BetfairVIP</span> Cricket Blog
             </h1>
             <p className="mt-4 max-w-2xl text-base text-muted-foreground md:text-lg">
               Long-form analysis, prediction strategy, player watchlists and tooling reviews — written by verified analysts, backed by ball-by-ball data.

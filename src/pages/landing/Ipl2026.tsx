@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+﻿import { Link } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { BottomNav } from "@/components/BottomNav";
@@ -9,10 +9,10 @@ import { Trophy, BarChart3, Calendar, Users, Sparkles, ArrowRight } from "lucide
 import { SITE } from "@/lib/site";
 
 const FAQS = [
-  { q: "When does IPL 2026 start?", a: "IPL 2026 is scheduled for late March 2026, with the final expected in late May. Betfair365 Cricket Hub publishes the full fixture grid the day BCCI releases it." },
+  { q: "When does IPL 2026 start?", a: "IPL 2026 is scheduled for late March 2026, with the final expected in late May. BetfairVIP Cricket Hub publishes the full fixture grid the day BCCI releases it." },
   { q: "Who are the IPL 2026 favourites?", a: "Mumbai Indians and Gujarat Titans top our IPL 2026 power rankings on net run rate, top-order strike rate and death-overs economy." },
-  { q: "Where can I see live IPL 2026 scores?", a: "The Betfair365 live cricket scoreboard updates every IPL 2026 match in under one second, with ball-by-ball win-probability." },
-  { q: "Is IPL 2026 prediction free on Betfair365?", a: "Yes. All IPL 2026 fan predictions on Betfair365 are free — we use virtual coins, never real-money wagering." },
+  { q: "Where can I see live IPL 2026 scores?", a: "The BetfairVIP live cricket scoreboard updates every IPL 2026 match in under one second, with ball-by-ball win-probability." },
+  { q: "Is IPL 2026 prediction free on BetfairVIP?", a: "Yes. All IPL 2026 fan predictions on BetfairVIP are free — we use virtual coins, never real-money wagering." },
 ];
 
 const TIERS = [
@@ -34,8 +34,8 @@ const READS = [
 const Ipl2026 = () => (
   <div className="min-h-screen bg-background pb-16 lg:pb-0">
     <Seo
-      title="IPL 2026 — Power Rankings, Live Scores & Fan Predictions | Betfair365"
-      description="Your IPL 2026 hub: data-driven power rankings, live ball-by-ball scores, top batter and bowler watchlists, fixtures and the Betfair365 fan-prediction community."
+      title="IPL 2026 — Power Rankings, Live Scores & Fan Predictions | BetfairVIP"
+      description="Your IPL 2026 hub: data-driven power rankings, live ball-by-ball scores, top batter and bowler watchlists, fixtures and the BetfairVIP fan-prediction community."
       canonical="/ipl-2026"
       keywords="IPL 2026, IPL 2026 schedule, IPL 2026 power rankings, IPL 2026 live score, IPL 2026 predictions, IPL 2026 teams, IPL 2026 stats"
       image="/og-ipl-2026.jpg"
@@ -57,7 +57,7 @@ const Ipl2026 = () => (
           <span className="bg-gradient-gold bg-clip-text text-transparent">IPL 2026</span> — power rankings, live scores & predictions
         </h1>
         <p className="mt-4 text-lg text-muted-foreground">
-          The complete Betfair365 IPL 2026 hub: data-driven team tier list, ball-by-ball live scoreboard,
+          The complete BetfairVIP IPL 2026 hub: data-driven team tier list, ball-by-ball live scoreboard,
           top batter and bowler watchlists, and a 25,000-strong fan-prediction community.
         </p>
         <div className="mt-6 flex flex-wrap items-center justify-center gap-3">

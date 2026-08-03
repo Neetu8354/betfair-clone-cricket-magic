@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+﻿import { Link } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { BottomNav } from "@/components/BottomNav";
@@ -18,10 +18,10 @@ const AuthorIndex = () => {
     {
       "@context": "https://schema.org",
       "@type": "CollectionPage",
-      name: "Betfair365 Editorial Team",
+      name: "BetfairVIP Editorial Team",
       url: `${SITE_URL}/authors`,
       description:
-        "Meet the verified cricket analysts, editors and writers behind Betfair365's IPL and T20 coverage.",
+        "Meet the verified cricket analysts, editors and writers behind BetfairVIP's IPL and T20 coverage.",
       hasPart: ALL_AUTHORS.map((a) => ({
         "@type": "Person",
         name: a.name,
@@ -34,8 +34,8 @@ const AuthorIndex = () => {
   return (
     <div className="min-h-screen bg-background pb-16 lg:pb-0">
       <Seo
-        title="Betfair365 Editorial Team — Cricket Analysts & Writers"
-        description="Meet the verified cricket analysts, editors and strategy writers behind Betfair365's IPL coverage, predictions and T20 stats explainers."
+        title="BetfairVIP Editorial Team — Cricket Analysts & Writers"
+        description="Meet the verified cricket analysts, editors and strategy writers behind BetfairVIP's IPL coverage, predictions and T20 stats explainers."
         canonical="/authors"
         keywords="betfair editorial team, cricket analysts India, IPL writers, T20 cricket experts"
         jsonLd={jsonLd}
@@ -49,10 +49,10 @@ const AuthorIndex = () => {
           <div className="relative">
             <span className="eyebrow"><Users className="h-3 w-3" /> Editorial Team</span>
             <h1 className="mt-4 max-w-3xl font-display text-4xl font-bold leading-tight tracking-tight md:text-5xl">
-              Meet the people behind <span className="text-gold-gradient">Betfair365</span>
+              Meet the people behind <span className="text-gold-gradient">BetfairVIP</span>
             </h1>
             <p className="mt-4 max-w-2xl text-base text-muted-foreground md:text-lg">
-              Every Betfair365 article is written or reviewed by a verified cricket
+              Every BetfairVIP article is written or reviewed by a verified cricket
               specialist. Analysts, editors and strategy writers behind our IPL
               coverage and T20 predictions.
             </p>
@@ -78,7 +78,7 @@ const AuthorIndex = () => {
                         {a.verified && (
                           <BadgeCheck
                             className="h-4 w-4 text-gold"
-                            aria-label="Verified Betfair365 editorial author"
+                            aria-label="Verified BetfairVIP editorial author"
                           />
                         )}
                       </div>

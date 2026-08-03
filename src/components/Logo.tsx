@@ -1,8 +1,8 @@
-export const Logo = ({ className = "" }: { className?: string }) => (
+﻿export const Logo = ({ className = "" }: { className?: string }) => (
   <div
     className={`flex items-center gap-2.5 ${className}`}
     role="img"
-    aria-label="Betfair365 Cricket Hub logo"
+    aria-label="BetfairVIP Cricket Hub logo"
   >
     <div className="relative flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-gold shadow-gold ring-1 ring-gold/40">
       <svg
@@ -23,10 +23,10 @@ export const Logo = ({ className = "" }: { className?: string }) => (
     </div>
     <div className="leading-none">
       <div className="font-display text-lg font-bold tracking-tight text-foreground">
-        Bet<span className="text-gold-gradient">fair</span>
+        Betfair<span className="text-gold-gradient">VIP</span>
       </div>
       <div className="mt-0.5 text-[9px] font-bold uppercase tracking-[0.22em] text-muted-foreground">
-        Cricket • Stats
+        Cricket • Betting
       </div>
     </div>
   </div>

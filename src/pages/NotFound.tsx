@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+﻿import { Link, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -16,8 +16,8 @@ const NotFound = () => {
   return (
     <div className="min-h-screen bg-background pb-16 lg:pb-0">
       <Seo
-        title="Page not found (404) | Betfair365 Cricket Hub"
-        description="The page you're looking for doesn't exist. Head back to the Betfair365 home page or browse our cricket blog."
+        title="Page not found (404) | BetfairVIP Cricket Hub"
+        description="The page you're looking for doesn't exist. Head back to the BetfairVIP home page or browse our cricket blog."
         noindex
       />
       <Header />
