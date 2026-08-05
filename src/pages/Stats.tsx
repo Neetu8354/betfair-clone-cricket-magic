@@ -11,7 +11,7 @@ import { BarChart3 } from "lucide-react";
 const Stats = () => (
   <div className="min-h-screen bg-background pb-16 lg:pb-0">
     <Seo
-      title="Cricket Stats & Player Analytics — IPL 2026 | BetfairPlays Live"
+      title="Cricket Stats & Player Analytics — IPL 2026 | BetfairVIP"
       description="Deep cricket stats, player form curves, strike rates, averages and matchup analytics for IPL 2026 and international cricket — explained for Indian fans."
       canonical="/stats"
       keywords="cricket stats, ipl player stats, batting average, strike rate, cricket analytics india"

@@ -52,8 +52,8 @@ const MoveIcon = ({ m }: { m: Move }) => {
 const Rankings = () => (
   <div className="min-h-screen bg-background pb-16 lg:pb-0">
     <Seo
-      title="Cricket Rankings & Leaderboard — IPL Power Rankings | BetfairPlays Live"
-      description="Live cricket rankings, IPL team power rankings and the BetfairPlays community leaderboard — top fan predictors of the season."
+      title="Cricket Rankings & Leaderboard — IPL Power Rankings | BetfairVIP"
+      description="Live cricket rankings, IPL team power rankings and the BetfairVIP community leaderboard — top fan predictors of the season."
       canonical="/rankings"
       keywords="cricket rankings, ipl power rankings, cricket leaderboard, top fan predictors india"
       jsonLd={[
