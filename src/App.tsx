@@ -13,6 +13,7 @@ import BlogIndex from "./pages/blog/BlogIndex.tsx";
 import BlogPost from "./pages/blog/BlogPost.tsx";
 import About from "./pages/About.tsx";
 import Contact from "./pages/Contact.tsx";
+import Community from "./pages/Community.tsx";
 import CricketId from "./pages/landing/CricketId.tsx";
 import LiveBetting from "./pages/landing/LiveBetting.tsx";
 import Ipl2026 from "./pages/landing/Ipl2026.tsx";
@@ -37,6 +38,7 @@ const App = () => (
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/community" element={<Community />} />
           <Route path="/cricket-id" element={<CricketId />} />
           <Route path="/live-betting" element={<LiveBetting />} />
           <Route path="/ipl-2026" element={<Ipl2026 />} />

@@ -13,7 +13,7 @@ const nav: { label: string; href: string; internal?: boolean }[] = [
   { label: "Blog", href: "/blog", internal: true },
   { label: "About", href: "/about", internal: true },
   { label: "Contact", href: "/contact", internal: true },
-  { label: "Community", href: SITE.whatsapp },
+  { label: "Community", href: "/community", internal: true },
 ];
 
 export const Header = () => {
