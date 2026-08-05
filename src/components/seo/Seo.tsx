@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-// Cache-bust: 2026-08-05 12:20 UTC+05:30 — All "BetfairPlays Live" references removed, only "BetfairVIP" used site-wide
+// Cache-bust: 2026-08-05 12:21 UTC+05:30 — Force rebuild to clear stale Vercel cache. All schemas use "BetfairVIP" only.
 
 type Props = {
   title: string;
