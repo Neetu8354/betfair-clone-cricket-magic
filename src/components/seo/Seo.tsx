@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 
+// Cache-bust: 2026-08-05 12:20 UTC+05:30 — All "BetfairPlays Live" references removed, only "BetfairVIP" used site-wide
+
 type Props = {
   title: string;
   description: string;
