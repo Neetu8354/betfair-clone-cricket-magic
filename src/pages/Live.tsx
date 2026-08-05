@@ -11,7 +11,7 @@ import { Radio, Sparkles } from "lucide-react";
 const Live = () => (
   <div className="min-h-screen bg-background pb-16 lg:pb-0">
     <Seo
-      title="Live Cricket Scores — IPL, T20I & Domestic | BetfairPlays Live"
+      title="Live Cricket Scores — IPL, T20I & Domestic | BetfairVIP"
       description="Real-time cricket scores, match pulse and ball-by-ball updates for IPL 2026, internationals and major domestic fixtures. India's fastest cricket live hub."
       canonical="/live"
       keywords="live cricket score, ipl live score, t20 live, india cricket live, ball by ball cricket"
