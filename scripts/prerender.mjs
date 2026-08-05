@@ -43,12 +43,24 @@ async function main() {
     process.exit(1);
   }
 
+  let executablePath;
+  try {
+    executablePath = await chromium.executablePath();
+    if (!executablePath) {
+      console.warn("[prerender] chromium.executablePath() returned empty; skipping prerender.");
+      return;
+    }
+  } catch (err) {
+    console.warn("[prerender] chromium.executablePath() failed:", err.message, "— skipping prerender.");
+    return;
+  }
+
   const routes = await getRoutes();
   const server = await startServer();
   const { port } = server.address();
   const baseUrl = `http://127.0.0.1:${port}`;
 
-  const executablePath = await chromium.executablePath();
+  console.log(`[prerender] launching Chromium from ${executablePath}`);
   const browser = await puppeteer.launch({
     executablePath,
     headless: chromium.headless,
@@ -56,9 +68,11 @@ async function main() {
   });
 
   try {
+    console.log(`[prerender] prerendering ${routes.length} routes...`);
     for (const route of routes) {
       const page = await browser.newPage();
       try {
+        console.log(`[prerender] visiting ${baseUrl}${route}...`);
         await page.goto(`${baseUrl}${route}`, { waitUntil: "networkidle0", timeout: 30000 });
         const html = await page.content();
 
@@ -66,13 +80,14 @@ async function main() {
         await mkdir(outDir, { recursive: true });
         const outFile = path.join(outDir, "index.html");
         await writeFile(outFile, html, "utf-8");
-        console.log(`[prerender] wrote ${path.relative(distDir, outFile)}`);
+        console.log(`[prerender] ✓ wrote ${path.relative(distDir, outFile)}`);
       } catch (err) {
-        console.error(`[prerender] failed for ${route}:`, err.message);
+        console.error(`[prerender] ✗ failed for ${route}:`, err.message);
       } finally {
         await page.close();
       }
     }
+    console.log("[prerender] done.");
   } finally {
     await browser.close();
     server.close();
